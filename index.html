@@ -22,6 +22,7 @@
 	<script src="https://kit.fontawesome.com/5694cf4c5b.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
 	<title>Inicio</title>
@@ -44,7 +45,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="index.html" class="logo m-0 float-start  px-4" ><b>LOGO</b></a>
+					<a href="index.html" class="logo m-0 float-start  px-4" ><b>L<i class='bx bxs-home' ></i>s Pataguas</b></a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class=""><a href="#id-nosotros">NOSOTROS</a></li>
@@ -53,7 +54,7 @@
 						<li><a href="#id_contacto">CONTACTO</a></li>
 						<li><a href="">PÚBLICA GRATIS</a></li>
 
-						<li><a href="intranet.html">INTRANET</a></li>
+						<li><a href="http://190.114.255.247:195/">INTRANET</a></li>
 					</ul>
 
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
@@ -70,12 +71,10 @@
 	<div class="hero pt-5" style="background-image:url(images/inicio/inicio.JPG);background-position: center center;background-repeat: no-repeat;background-size: cover;">
 
 		<div class="container">
-			<div class="row justify-content-center align-items-center">
+			<div class="row">
 				<div class="col-lg-12 text-center ">
-
-					<form class="narrow-w form-search d-flex align-items-stretch mb-3 " data-aos="fade-up" data-aos-delay="200">					
-						<div class="row p-3 p-md-5 text-center pt-5 cuadro-bl mt-4" style="--bs-gutter-x: 0;"><!-- p-5-->
-
+					<form class="narrow-w form-filter d-flex align-items-stretch mb-3 " data-aos="fade-up" data-aos-delay="200">					
+						<div class="row p-3 p-md-5 text-center pt-5 cuadro-bl mt-4">
 							<div class="row row-filtro"  style="--bs-gutter-x: 0;">
 								<div class="col-3">
 									<input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -240,20 +239,6 @@
 					<h1 class="font-weight-bold  heading" style="padding-left: 30px ;font-weight: bold;">Propiedades Destacadas</h1>
 					
 				</div>
-				<!-- <div class="col-lg-2">
-					<div class="row">
-						<div class="col-6 ">
-							<a href="" class="border p-3" style="box-shadow: 0px 0px 12px 1px #000000;" >
-								<i  class="fa fa-arrow-left  p-1"></i>
-							</a>
-						</div>
-						<div class="col-6 ">
-							<a href="" class="border p-3" style="box-shadow: 0px 0px 12px 1px #000000;" >
-								<i  class="fa fa-arrow-right  p-1"></i>
-							</a>
-						</div>
-					</div>
-				</div> -->
 
 			</div>
 			<div class="row">
@@ -812,36 +797,36 @@
 
 <!----------------------------------Contactanos---------------------------------------------->
 
-	<div class="hero contact-img" id="id_contacto" style="background-image:url(images/nosotros_2.jpg ) ;">
-		<div class="container">
-			<div class="row justify-content-center align-items-center" style="height: 81vh !important">
-				<div class="col-lg-12 text-start  " style="max-width: 1145px;">
+	<div class="hero contact-img" id="id_contacto" style="background-image:url(images/contact/contacto.JPG ) ;">
+		<div class="container" style="margin-top: 20px !important;">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-12 text-start position-form-contact">					
 					<div class="row mt-5 contact-fondo" >
 						<div class="col-12">
 							<div class="row  ">
-								<div class="col-12 p-3 text-center">
+								<div class="col-12 p-5 ">
 									<h1 style="font-weight: bold ;color: white;padding-left: 70px;">Contacto</h1>
 								</div>
 							</div>
-							<div class="row " style="padding: 0rem 4rem 0rem 4rem;">
-								<div class="col-lg-5 " style="padding: 0rem 1rem 0rem 1rem;">
-									<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3 formcontact" data-aos="fade-up" data-aos-delay="200">
+							<div class="row " style="padding: 0rem 2rem 0rem 2rem;">
+								<div class="col-lg-5" style="padding: 0rem 1rem 0rem 1rem;">
+									<form action="#" class="narrow-w form-search  mb-3 formcontact" data-aos="fade-up" data-aos-delay="200">
 							
 										<div class="row   ">
 											<div class="col-lg-12 p-1 ">
-												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;color: #000000;" placeholder="Nombre ">						
+												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent;color: white;" placeholder="Nombre ">						
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<input type="email" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;color: #000000;" placeholder="Mail">
+												<input type="email" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent;color: white;" placeholder="Mail">
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;color: #000000;" placeholder="Telefono ">						
+												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent;color: white;" placeholder="Telefono ">						
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;color: #000000;" placeholder="Asunto">
+												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent;color: white;" placeholder="Asunto">
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<textarea name="" id="" cols="30" rows="7" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;color: #000000;" placeholder="Mensaje"></textarea>
+												<textarea name="" id="" cols="30" rows="7" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent;color: white;" placeholder="Mensaje"></textarea>
 											</div>
 			
 											<div class="col-lg-12 p-1 text-center">
@@ -881,8 +866,8 @@
 																<div class="col-lg-2">
 																	<i class="fa fa-phone fa-lg  p-1"></i>
 																</div>
-																<div class="col-lg-10">
-																	+569 66784682/ +569 93286079
+																<div class="col-lg-7">
+																	+569 66784682 / +569 93286079
 																</div>
 															</div>
 
@@ -918,13 +903,11 @@
 																	<i class="fa fa-clock-o fa-lg  p-1"></i>
 																</div>
 																<div class="col-lg-10">
-																	24 horas 7 dias a la semana.
+																	24 horas, 7 dias a la semana
 																</div>
 															</div>
-
 														</div>
 													</div>
-
 												</div>
 											</div>
 										</div>
@@ -950,20 +933,22 @@
 		<div class="container">
 			
 			<div class="row">
-				<div class="col-lg-2 text-center pt-4">
-					<a href="index.html"><b><h1 style="font-size: 80px;font-weight: 900; color: #333;">LOGO</h1></b></a>
+				<div class="col-lg-2  pt-4">
+					<a href="index.html"><b><h1 style="font-size: 40px;font-weight: 700; color: #333;"><span>L<i class='bx bxs-home' ></i>s</span> Pataguas </h1></b></a>
 				</div> 
 				<div class="col-lg-7  " style="padding: 0px 77px;">
 						<div class="row pt-2" >
 							<div class="col-12 pt-2">
 								<div class="row  " style="font-size: 14px;" >
 									<h3 style="font-size: 20px;font-weight: 700;text-transform: uppercase;">Menú</h3>
-									<div class="col text-center"><a class="text-black"  style="text-decoration:none ;" href="#id-nosotros">NOSOTROS</a></div>
-									<div class="col text-center"><a class="text-black"  style="text-decoration:none ;" href="properties.html">PROPIEDADES</a></div>
-									<div class="col text-center"><a class="text-black"  style="text-decoration:none ;" href="services.html">SERVICIOS</a></div>
-									<div class="col text-center"><a class="text-black"  style="text-decoration:none ;" href="contact.html">CONTACTO</a></div>
-									<div class="col-3 text-center"><a class="text-black"  style="text-decoration:none ;" href="">PÚBLICA GRATIS</a></div>
-									<div class="col text-center"><a class="text-black"  style="text-decoration:none ;" href="intranet.html">INTRANET</a></div>
+									<ul class="list-unstyled float-left links">
+										<li class="mb-2"><a href="#id-nosotros">NOSOTROS</a></li>
+										<li class="mb-2"><a href="properties.html">PROPIEDADES</a></li>
+										<li class="mb-2"><a href="services.html">SERVICIOS</a></li>
+										<li class="mb-2"><a href="contact.html">CONTACTO</a></li>
+										<li class="mb-2"><a href="">PÚBLICA GRATIS</a></li>
+										<li class="mb-2"><a href="http://190.114.255.247:195/">INTRANET</a></li>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -1027,6 +1012,8 @@
     		<span class="visually-hidden">Loading...</span>
     	</div>
     </div>
+
+
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
