@@ -9892,8 +9892,10 @@ textarea {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-.property-item.mb-30 {
-  margin-bottom: 30px; }
+.property-item .mb-30 {
+  margin-bottom: 30px;
+
+}
 
 .property-item .img {
   position: relative;
@@ -9902,7 +9904,6 @@ textarea {
 }
 
 .property-item .property-content {
-
   background: var(--color-success);
   padding: 30px;
   font-size: 13px;
@@ -9912,6 +9913,38 @@ textarea {
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
   z-index: 2; }
+
+  @media (max-width:1399px){
+    .property-item .property-content{
+      width: 90%;
+
+    }
+  }
+  @media (max-width:1199px){
+    .property-item .property-content{
+      width: 100%;
+
+    }
+  }
+  @media (max-width:990px){
+    .property-item .property-content{
+      width: 72%;
+
+    }
+  }
+  @media (max-width:766px){
+    .property-item .property-content{
+      width: 97%;
+
+    }
+  }
+  @media (max-width:540px){
+    .property-item .property-content{
+      width: 100%;
+
+    }
+  }
+
   .property-item .property-content .price, .property-item .property-content .city {
     font-size: 20px;
     font-weight: 700;
@@ -10204,7 +10237,8 @@ textarea {
   color: white;
   text-align: center; }
   .custom-pagination a:hover, .custom-pagination a.active {
-    background: white;
+    background-color: var(--color-info);
+    border-radius: 50px;
     color: #fff; }
 
 .agent-box {
@@ -10705,10 +10739,42 @@ nav[aria-label="breadcrumb"] li:before {
   @media (max-width:992px){
   .position-form-contact{
     margin-top: 10px;
-  }
+   }
   }
 
-
-  .form-filter {
-    width: 800px !important;
+  .row-filter-margin{
+    margin-top: 120px;
   }
+
+  @media (max-width:992px){
+    .row-filter-margin{
+      margin-top: 90px;
+    }
+  }
+
+  .textLimitClass{
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+  
+  .textLimitClass:hover{
+    display: block !important;
+  }
+
+  .mapboxgl-canvas-container {
+    width: 1920px;
+    height: 100% !important;
+    border-radius: 15px;
+  }
+  
+  /* .mapboxgl-canvas {
+    width: max-content !important;
+  } */
+  
+  #map {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 5px !important;
+  }  
