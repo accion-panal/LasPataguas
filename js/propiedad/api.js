@@ -40,8 +40,7 @@ export default async function apiCall() {
 
   function showItems() {
     document.getElementById('container-cards').innerHTML = data.map(data => 
-      `	
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-2" >
+      `	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-2" >
                         <div class="property-item">
 								<a href="/property-single.html?${data.id}&statusId=${1}&companyId=${1}" class="img">
 									<img src="images/img_1.jpg" alt="Image" class="img-fluid">

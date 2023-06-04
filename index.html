@@ -101,31 +101,32 @@
 									</label>
 								</div>
 							</div>
-
-		
 							<div class="row row-bl"  style="--bs-gutter-x: 0;" >
 								<div class="col-lg-12 p-1">
-									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-										<option selected>Tipo inmueble</option>
-										<option value="1">Casa</option>
-										<option value="2">Terreno</option>
-										<option value="3">Departamento</option>
+									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="typeOfProperty">
+										<option value="" selected>Tipo inmueble</option>
+										<option value="departamento">Departamento</option>
+										<option value="casa">Casa</option>
+										<option value="parcela">Parcela</option>
+										<option value="bodega">Bodega</option>
+										<option value="terreno">Terreno</option>
+										<option value="estacionamiento">Estacionamiento</option>
+										<option value="industrial">Industrial</option>
+										<option value="agricola">Agricola</option>
+										<option value="local">Local Comercial</option>
+										<option value="oficina">Oficina</option>
+										<option value="sitio">Sitio</option>
+										<option value="Terreno En Construccion">Terreno En Construccion</option>
 									</select>
 								</div>
 								<div class="col-lg-6 p-1">
-									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-										<option selected>Región</option>
-										<option value="1">SI</option>
-										<option value="2">NO</option>
-		
+									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="region">
+										<option value="0" selected>Región</option>
 									</select>
 								</div>
 								<div class="col-lg-6 p-1">
-									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-										<option selected>Comuna</option>
-										<option value="1">RM</option>
-										<option value="2">5ta</option>
-										<option value="3">6ta</option>
+									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="commune">
+										<option value="" selected>Comuna</option>
 									</select>
 								</div>
 		
@@ -144,18 +145,14 @@
 										</div>
 										<div class="col-3">
 											<label class="form-label" for="">Desde</label>
-											<input class="form-control-origin" type="number" name="" id="" value="Desde">	
+											<input class="form-control-origin" type="number" name="" id="min_price" value="Desde">	
 										</div>
 										<div class="col-3">
 											<label class="form-label" for="">Hasta</label>
-											<input class="form-control-origin" type="number" name="" id="" value="Hasta">						
+											<input class="form-control-origin" type="number" name="" id="max_price" value="Hasta">						
 										</div>
 									</div>
-
-
-
 								</div>
-
 								<div class="row accordion" style="--bs-gutter-x: 0;" id="accordionExample">
 										<div class="col-6 p-2" style="padding-left: 15px !important;" >
 											<div class="row text-start " id="headingOne">
@@ -170,59 +167,52 @@
 									<div class="col-6 p-2">
 										<div class="row text-end " style="--bs-gutter-x: 0;">
 											<div class="col-12" style="margin-top: 10px; padding-left: 1.5rem;padding-right: 1.5rem;" >
-												<button type="submit" class="btn btn-mas" 
-												>Buscar</button>
-												
+												<button type="submit" class="btn btn-mas" id="buscar" >Buscar</button>
 											</div>
 										</div>
 						
 									</div>
 									<div class="row text-center row-import collapse"  id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 										<div class="col-lg-6 p-1">
-											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-												<option selected>Habitaciones</option>
+											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="bedrooms">
+												<option value="" selected>Habitaciones</option>
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
-												<option value="3">4</option>
+												<option value="4">4</option>
 											</select>
 										</div>
 										<div class="col-lg-6 p-1">
-											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-												<option selected>Baños</option>
+											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="bathrooms">
+												<option value="" selected>Baños</option>
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
-											</select>
-										</div>
-				
-										<div class="col-lg-6 p-1">
-											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-												<option selected>Estacionamientos</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
+												<option value="4">4</option>
 											</select>
 										</div>
 				
-										<div class="col-lg-6 p-1">
+										<div class="col-lg-12 p-1">
+											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="covered_parking_lots">
+												<option value="" selected>Estacionamientos</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+
+											</select>
+										</div>
+										<!-- <div class="col-lg-6 p-1">
 											<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
 												<option selected>Superficie m2</option>
 												<option value="1">10 - 20</option>
 												<option value="2">20 - 30</option>
 												<option value="3">40 - 50</option>
 											</select>
-										</div>
-	
-	
+										</div> -->	
 									</div>
-							
 								</div>
-								
-
 							</div>
-
-
 						</div>
 					</form>
 				</div>
@@ -628,6 +618,8 @@
     <script type="module" src="js/utils/PostContactForm.js"></script>
     <script type="module" src="js/utils/SendEmail.js"></script>
     <script type="module" src="js/propiedad/mapsContact.js"></script>
+	<script type="module" src="js/utils/filterOnSubmit.js"></script>
+    <script type="module" src="js/utils/filterOnSubmitIndex.js"></script>
 
 
 

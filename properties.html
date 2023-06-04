@@ -95,27 +95,30 @@
 						</div>
 						<div class="row row-bl"  style="--bs-gutter-x: 0;" >
 							<div class="col-lg-12 p-1">
-								<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-									<option selected>Tipo inmueble</option>
-									<option value="1">Casa</option>
-									<option value="2">Terreno</option>
-									<option value="3">Departamento</option>
+								<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="typeOfProperty">
+									<option value="" selected>Tipo inmueble</option>
+									<option value="departamento">Departamento</option>
+									<option value="casa">Casa</option>
+									<option value="parcela">Parcela</option>
+									<option value="bodega">Bodega</option>
+									<option value="terreno">Terreno</option>
+									<option value="estacionamiento">Estacionamiento</option>
+									<option value="industrial">Industrial</option>
+									<option value="agricola">Agricola</option>
+									<option value="local">Local Comercial</option>
+									<option value="oficina">Oficina</option>
+									<option value="sitio">Sitio</option>
+									<option value="Terreno En Construccion">Terreno En Construccion</option>
 								</select>
 							</div>
 							<div class="col-lg-6 p-1">
-								<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-									<option selected>Región</option>
-									<option value="1">SI</option>
-									<option value="2">NO</option>
-	
+								<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="region">
+									<option value="0" selected>Región</option>
 								</select>
 							</div>
 							<div class="col-lg-6 p-1">
-								<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-									<option selected>Comuna</option>
-									<option value="1">RM</option>
-									<option value="2">5ta</option>
-									<option value="3">6ta</option>
+								<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="commune">
+									<option value="" selected>Comuna</option>
 								</select>
 							</div>
 	
@@ -134,11 +137,11 @@
 									</div>
 									<div class="col-3">
 										<label class="form-label" for="">Desde</label>
-										<input class="form-control-origin" type="number" name="" id="" value="Desde">	
+										<input class="form-control-origin" type="number" name="" id="min_price" value="Desde">	
 									</div>
 									<div class="col-3">
 										<label class="form-label" for="">Hasta</label>
-										<input class="form-control-origin" type="number" name="" id="" value="Hasta">						
+										<input class="form-control-origin" type="number" name="" id="max_price" value="Hasta">						
 									</div>
 								</div>
 							</div>
@@ -157,53 +160,50 @@
 								<div class="col-6 p-2">
 									<div class="row text-end " style="--bs-gutter-x: 0;">
 										<div class="col-12" style="margin-top: 10px; padding-left: 1.5rem;padding-right: 1.5rem;" >
-											<button type="submit" class="btn btn-mas" 
-											>Buscar</button>
-											
+											<button type="button" class="btn btn-mas"  id="buscar2">Buscar</button>		
 										</div>
 									</div>
 					
 								</div>
 								<div class="row text-center row-import collapse"  id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 									<div class="col-lg-6 p-1">
-										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-											<option selected>Habitaciones</option>
+										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="bedrooms">
+											<option value="" selected>Habitaciones</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
-											<option value="3">4</option>
+											<option value="4">4</option>
 										</select>
 									</div>
 									<div class="col-lg-6 p-1">
-										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
-											<option selected>Baños</option>
+										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="bathrooms">
+											<option value="" selected>Baños</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
+											<option value="4">4</option>
+
 										</select>
 									</div>
 			
-									<div class="col-lg-6 p-1">
-										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
+									<div class="col-lg-12 p-1">
+										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="covered_parking_lots">
 											<option selected>Estacionamientos</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
+											<option value="4">4</option>
 										</select>
 									</div>
-			
-									<div class="col-lg-6 p-1">
+									<!--<div class="col-lg-6 p-1">
 										<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example">
 											<option selected>Superficie m2</option>
 											<option value="1">10 - 20</option>
 											<option value="2">20 - 30</option>
 											<option value="3">40 - 50</option>
 										</select>
-									</div>
-
-
+									</div> -->
 								</div>
-					
 							</div>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
 
 <!--                                       Botones Grilla - Carta - Mapa             -->
 
-	<div class="section px-0 px-md-5" style="padding-bottom: 0; " data-aos="fade-up"><!-- margin: 0px 6.7rem; -->
+	<div class="section px-0 px-md-5" style="padding-bottom: 0; " data-aos="fade-up">
 		<div class="row align-items-center py-1 ">
 			<div class="col-12 float-start " style="padding-left: 10%;">
 				<h1 style="font-size: 50px;font-weight: bold;color: #4d4d4d;">PROPIEDADES</h1>
@@ -258,56 +258,8 @@
 		<div class="container">
 			<div class="row" id="container-cards">
 				
-					<!-- <div class="property-item mb-3">
-
-								<a href="property-single.html" class="img">
-									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-
-								<div class="property-content text-start" style="padding: 10px 10px 10px 10px;">
-
-									<h1 style="font-weight: bold; padding-left:35px">TERRAMAR</h1>
-
-									<div>
-										<p style="font-size: 20px; padding-left:35px">
-											UF 3523 - CLP 123.456.789
-										</p>
-										<p class="text-center" style="font-size: 20px;"> <i class="fa fa-map-marker fa-lg"></i> Puerto Montt, Lorem insup</p>
-										
-										<div class="row p-3 text-center">
-											<div class="col-4 hr-l">
-												<div class="row ">
-													<div class="col-12"><h5>M2</h5></div>
-													<div class="col-12">77</div>
-
-												</div>
-													
-											</div>
-											<div class="col-4 hr-l">
-												<div class="row ">
-													<div class="col-12"><h5>Hab</h5></div>
-													<div class="col-12">3</div>
-
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="row">
-													<div class="col-12"><h5>Baño</h5></div>
-													<div class="col-12">2</div>
-												</div>
-											</div>
-										</div>
-										<div class="text-center">
-											<p>CASA / ARRIENDO</p>
-										</div>
-
-
-									</div>
-								</div>
-					</div>  -->
-				
 			</div>
-			<div class="row align-items-center py-5">
+			<!-- <div class="row align-items-center py-5">
 				<div class="col-lg-12 text-center">
 					<div class="custom-pagination">
 						<a href="#" class="pt-2 active" style="background-color: #4d4d4d;">1</a>
@@ -317,15 +269,9 @@
 						<a href="#" class="pt-2 " style="background-color: #4d4d4d;">5</a>
 					</div>
 				</div>
-			</div>
-
-
+			</div> -->
 		</div>
 	</div>
-
-
-
-
 
 <!------------------------Footer------------------------------------------->
 
@@ -421,6 +367,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/utils/filterOnSubmit.js"></script>
+    <script type="module" src="js/utils/filterOnSubmitIndex.js"></script>
+
 
   </body>
   </html>

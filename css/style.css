@@ -9916,10 +9916,17 @@ textarea {
 
   @media (max-width:1399px){
     .property-item .property-content{
-      width: 90%;
+      width: 100%;
 
     }
   }
+/* 
+  @media (max-width:1299px){
+    .property-item .property-content{
+      width: 100%;
+
+    }
+  } */
   @media (max-width:1199px){
     .property-item .property-content{
       width: 100%;
@@ -9928,7 +9935,7 @@ textarea {
   }
   @media (max-width:990px){
     .property-item .property-content{
-      width: 72%;
+      width: 100%;
 
     }
   }
@@ -10228,8 +10235,8 @@ textarea {
 
 .custom-pagination a {
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   line-height: 40px;
   font-weight: 700;
   border-radius: 50%;
@@ -10237,9 +10244,9 @@ textarea {
   color: white;
   text-align: center; }
   .custom-pagination a:hover, .custom-pagination a.active {
-    background-color: var(--color-info);
+    background-color: var(--color-success);
     border-radius: 50px;
-    color: #fff; }
+     }
 
 .agent-box {
   margin-top: 50px;
@@ -10757,6 +10764,7 @@ nav[aria-label="breadcrumb"] li:before {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+    
   }
   
   .textLimitClass:hover{
