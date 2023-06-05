@@ -1,4 +1,4 @@
-const formEmail = document.getElementById('form-contact');
+const formEmail = document.getElementById('form-contact-detail');
 import { RealtorSendEmailData } from "../Data/userId.js";
 
 
@@ -6,7 +6,7 @@ import { RealtorSendEmailData } from "../Data/userId.js";
 formEmail.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    let realtorMail = RealtorSendEmailData.sendEmail;
+let realtorMail = RealtorSendEmailData.detail;
 
 
 

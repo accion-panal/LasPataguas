@@ -9894,6 +9894,14 @@ textarea {
 
 .property-item .mb-30 {
   margin-bottom: 30px;
+  transform: translateY(1%);
+  transition: transform .8s ease; 
+
+}
+
+.property-item:hover {
+  transform: translateY(-2%);
+  display: block !important;
 
 }
 

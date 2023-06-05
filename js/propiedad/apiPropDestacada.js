@@ -4,8 +4,13 @@ import ExchangeRateServices from "../services/ExchangeRateServices.js";
 
 import { parseToCLPCurrency, clpToUf } from "../utils/getExchangeRate.js";
 
+import { PropertyData } from "../Data/userId.js";
+
+
 export default async function apiDestCall() {
-    let {data} = await getProperties(1, 10,0, 1, 1);
+	const {CodigoUsuarioMaestro,companyId,realtorId} = PropertyData;
+
+    let {data} = await getProperties(1, 10,CodigoUsuarioMaestro, 1, companyId, realtorId);
     let filtrado = data.filter(data => data.highlighted != null && data.highlighted  != false );
 
     const response2 = await ExchangeRateServices.getExchangeRateUF();
