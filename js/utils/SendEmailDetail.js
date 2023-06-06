@@ -8,13 +8,23 @@ formEmail.addEventListener('submit', function(e) {
 
 let realtorMail = RealtorSendEmailData.detail;
 
-
+// let respuesta = document.getElementById('respuesta');
 
 let firstName = document.getElementById('nombre');
 let email = document.getElementById('email');
-let subject = document.getElementById('sujeto');
+let subject = document.getElementById('subject');
 let phone = document.getElementById('phone');
 let message = document.getElementById('mensaje');
+
+
+if(firstName.value==='' || email.value==='' || phone.value==='' || subject.value==='' ||message.value===''){
+    return;
+    
+  }
+
+
+
+
 
 
 fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
@@ -24,7 +34,7 @@ fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
       'Accept': 'application/json'
   },
   body: JSON.stringify({
-    companyId:0,
+    
     Nombre: firstName.value,
     Correo: email.value,
     Telefono: phone.value,

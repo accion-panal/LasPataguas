@@ -23,7 +23,7 @@ export default async function apiDestCall() {
 								<a href="/property-single.html?${data.id}&statusId=${1}&companyId=${1}" class="img">
 									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
 								</a>
-								<div class="property-content text-start" style="padding: 10px 10px 10px 10px;">
+								<div class="property-content-splide text-start" style="padding: 10px 10px 10px 10px;">
 									<h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data.title}</h2>
 									<div>
 										<p class="text-center" style="font-size: 15px; ">
@@ -82,4 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
 	splide.mount();
 });
 
-apiDestCall()
+// apiDestCall()

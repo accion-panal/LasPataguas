@@ -18,7 +18,7 @@ let myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
  
 let raw = JSON.stringify({
-  "companyId":0,
+  "companyId":1,
   "name": firstName.value,
   "lastName":"",
   "email": email.value,
