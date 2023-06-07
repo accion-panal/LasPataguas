@@ -5,33 +5,111 @@ import	ExchangeRateServices from  "../services/ExchangeRateServices.js";
 import {parseToCLPCurrency, clpToUf} from "./getExchangeRate.js";
  
 
-const onFormSubmit = (
-    statusId,
-    companyId,
-    operationType,
-    typeOfProperty,
-    region,
-    commune,
-    min_price,
-    max_price,
-    bathrooms,
-    bedrooms,
-    covered_parking_lots
-  ) => {
-    return getPropertiesOnForm(
-      statusId,
-      companyId,
-      operationType,
-      typeOfProperty,
-      region,
-      commune,
-      min_price,
-      max_price,
-      bathrooms,
-      bedrooms,
-      covered_parking_lots 
-    );
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  const createUrl = {
+    operationType:
+      selectedSelects.operationType?.length > 0
+        ? `&operationType=${selectedSelects?.operationType}`
+        : '',
+    typeOfProperty:
+      selectedSelects.typeOfProperty?.length > 0
+        ? `&typeOfProperty=${selectedSelects.typeOfProperty}`
+        : '',
+    installmentType:
+      selectedSelects.installmentType?.length > 0
+        ? `&installment_type=${selectedSelects.installmentType}`
+        : '',
+    region:
+      selectedSelects.region?.length > 0
+        ? `&region=${selectedSelects.region}`
+        : '',
+    commune:
+      selectedSelects.commune?.length > 0
+        ? `&commune=${selectedSelects.commune}`
+        : '',
+    surfaceM2:
+      selectedSelects.surfaceM2?.length > 0
+        ? `&surface_m2=${selectedSelects.surfaceM2}`
+        : '',
+    minPrice:
+      selectedSelects.minPrice > 0
+        ? `&min_price=${selectedSelects.minPrice}`
+        : '',
+    maxPrice:
+      selectedSelects.maxPrice > 0
+        ? `&max_price=${selectedSelects.maxPrice}`
+        : '',
+    bedrooms:
+      selectedSelects.bedrooms?.length > 0
+        ? `&bedrooms=${selectedSelects.bedrooms}`
+        : '',
+    bathrooms:
+      selectedSelects.bathrooms?.length > 0
+        ? `&bathrooms=${selectedSelects.bathrooms}`
+        : '',
+    coveredParkingLots:
+      selectedSelects.coveredParkingLots?.length > 0
+        ? `&covered_parking_lots=${selectedSelects.coveredParkingLots}`
+        : '',
   };
+
+  const url = `properties?page=${1}&limit=${
+    paginationTopLimit.topLimit
+  }&statusId=${company.statusId}&companyId=${company.companyId}${
+    createUrl.operationType
+  }${createUrl.typeOfProperty}${createUrl.installmentType}${
+    createUrl.region
+  }${createUrl.commune}${createUrl.surfaceM2}${createUrl.minPrice}${
+    createUrl.maxPrice
+  }${createUrl.bedrooms}${createUrl.bathrooms}${
+    createUrl.coveredParkingLots
+  }`;
+
+  try {
+    setNotFoundMsg('');
+    setProperties([]);
+    setIsLoading(true);
+    const response = await api.get(url);
+    setProperties(response.data.data);
+    setIsLoading(false);
+    setNotFoundMsg(
+      response.data.data.length === 0
+        ? 'Lo sentimos, tu busqueda no coincide con nuestros registros'
+        : ''
+    );
+  } catch (error) {
+    console.error(error);
+    }
+  };
+
+// const onFormSubmit = (
+//     statusId,
+//     companyId,
+//     operationType,
+//     typeOfProperty,
+//     region,
+//     commune,
+//     min_price,
+//     max_price,
+//     bathrooms,
+//     bedrooms,
+//     covered_parking_lots
+//   ) => {
+//     return getPropertiesOnForm(
+//       statusId,
+//       companyId,
+//       operationType,
+//       typeOfProperty,
+//       region,
+//       commune,
+//       min_price,
+//       max_price,
+//       bathrooms,
+//       bedrooms,
+//       covered_parking_lots 
+//     );
+//   };
 
   let query = {
     page:1,
@@ -104,7 +182,7 @@ document.getElementById("covered_parking_lots").addEventListener( "change", (ele
 document.getElementById("buscar")?.addEventListener("click", async () => {
 	window.open(
 		window.location.origin +
-			`/properties.html?page=${query.page}&limit=${query.limit}&realtorId=${query.realtorId}&statusId=${query.statusId}&operationType=${query.operationType}&typeOfProperty=${query.typeOfProperty}&region=${query.region}&commune=${query.commune}&min_price=${query.min_price}&max_price=${query.max_price}&covered_parking_lots=${query.covered_parking_lots}&bathrooms=${query.bathrooms}&bedrooms=${query.bedrooms}`
+			`/properties.html?page=${query.page}&limit=${query.limit}&realtorId=${query.realtorId}&statusId=${query.statusId}&operationType=${query.operationType}&typeOfProperty=${query.typeOfProperty}&region=${'Santiago'}&commune=${'Huechuraba'}&min_price=${query.min_price}&max_price=${query.max_price}&covered_parking_lots=${query.covered_parking_lots}&bathrooms=${query.bathrooms}&bedrooms=${query.bedrooms}`
 	);
 });
 
@@ -112,7 +190,7 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
   console.log('buscando');
   document.getElementById(
 		"buscar2"
-	).innerHTML = `    	<div class="spinner-border" role="status">
+	).innerHTML = ` <div class="spinner-border" role="status">
 		<span class="visually-hidden">Loading...</span>
 	</div>`;
 	// let  response  = await getProperties(0,1,1);

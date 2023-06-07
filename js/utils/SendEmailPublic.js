@@ -1,4 +1,4 @@
-const formEmail = document.getElementById('form-public');
+const formEmail = document.getElementById('form-contact-public');
 import { RealtorSendEmailData } from "../Data/userId.js";
 
 
@@ -6,15 +6,27 @@ import { RealtorSendEmailData } from "../Data/userId.js";
 formEmail.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    let realtorMail = RealtorSendEmailData.public;
+let realtorMail = RealtorSendEmailData.public;
 
 
 
-let firstName = document.getElementById('nombre');
+let fullName = document.getElementById('nombre');
 let email = document.getElementById('email');
-let subject = document.getElementById('sujeto');
 let phone = document.getElementById('phone');
-let message = document.getElementById('mensaje');
+
+let selectOperation = document.getElementById('operationType');
+let selectProperty = document.getElementById('typeOfProperty');
+let selectRegion = document.getElementById('region');
+
+if (selectOperation.value === '0' || selectProperty.value === '0' || selectRegion.value === '0' ||
+fullName.value === '' || email.value === '' || phone.value === '') {
+  respuesta.innerHTML = `<div class="alert alert-danger" role="alert" style="font-size:13px;">
+  Los campos no deben estar vacios.
+ <button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>`;
+
+return;
+}
 
 
 fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
@@ -24,15 +36,15 @@ fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
       'Accept': 'application/json'
   },
   body: JSON.stringify({
-    companyId:0,
-    tipo_propiedad:typeOfProperty.value,
+    tipo_propiedad:selectOperation.value,
+    tipo_operacion:selectProperty.value,
     Nombre_apellido: fullName.value,
     Correo : email.value,
     Telefono: phone.value,
-    Region:region.value,
-    Comuna:comuna.value,
-    Dirección:direccion.value,
-    Area:area.value,
+    Region:selectRegion.value,
+    Comuna:'',
+    Dirección:'',
+    Area:'',
     termsAndConditions: true,
   })
 })
