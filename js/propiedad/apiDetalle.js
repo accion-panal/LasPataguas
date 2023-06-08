@@ -11,7 +11,15 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     let img;
 
     console.log(data)
-    /* INFORMACION */
+    /* INFORMACION REALTOR */
+    document.getElementById('name-realtor').innerHTML = `
+    <p><b style="font-size: 35px;">${data.realtor.name} ${data.realtor.lastName}</b></p>`;
+    document.getElementById('email-realtor').innerHTML = `
+    <p style="font-size: 18px;">${data.realtor.mail}</p>`;
+    document.getElementById('phone-realtor').innerHTML = `
+    <p style="font-size: 18px;"> ${data.realtor.contactPhone != null && data.realtor.contactPhone!= '' ? data.realtor.contactPhone : 'No tiene número de contacto'}</p>`;
+
+
     /* Informacion principal */
     document.getElementById('title-prop').innerHTML = `
     <h1 style="font-weight: bold;color: #4d4d4d;">
@@ -32,23 +40,23 @@ export default async function apiDetalleCall(id, statusId, companyId) {
             <p>
 				REF: ${data.id}
 			</p> `;
-    /* Precio */
+    
     /* Imagenes en splide */
-    // data.images.forEach((images, index) => {img += ` 
-    //     <li class="splide__slide ${ index == 0 ? "active" : ""}"> 
-    //         <img src="${images != null && images != "" && images != undefined  ? images : "img/Sin.png"}" style="height:600px;width:100%;"/>
-    //     </li>	
-    // `})
-    // document.getElementById('carrucel-img').innerHTML = `
-    //     <li class="splide__slide">${img}</li>
-    // `;
-    // let splide = new Splide(".splide", {
-    //     type: "fade",
-    //     padding: '5rem',
-    //     rewind:true,
-    //     autoplay: "play",       
-    // });
-    // splide.mount();
+    data.images.forEach((images, index) => {img += ` 
+        <li class="splide__slide ${ index == 0 ? "active" : ""}"> 
+            <img src="${images != null && images != "" && images != undefined  ? images : "img/Sin.png"}" style="height:600px;width:100%;"/>
+        </li>	
+    `})
+    document.getElementById('carrucel-img').innerHTML = `
+        <li class="splide__slide">${img}</li>
+    `;
+    let splide = new Splide(".splide", {
+        type: "fade",
+        rewind:true,
+    });
+    splide.mount();
+    /* Fin Imagenes en splide */
+
 
     document.getElementById('uf-prop').innerHTML =
     `<b style="font-size: 50px;" >UF ${clpToUf(data.price, ufValueAsNumber)}</b>`;

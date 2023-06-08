@@ -28,6 +28,7 @@
 	<link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
 	<!--FIN MAPBOX CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
 	<title>Propiedad</title>
 </head>
@@ -71,43 +72,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12"  id="title-prop">
-					<!-- <h1 style="font-weight: bold;color: #4d4d4d;">
-						TERRAMAR
-					</h1> -->
+				
 				</div>
 				<div class="col-12" id="dire-prop">
-					<!-- <p>
-						<i class="fa fa-map-marker fa-lg  p-1"></i>
-						Puerto montt, Lorem insup dolor
-					</p> -->
+				
 				</div>
 				<div class="col-12" id="cod-prop">
-					<!-- <p>
-						REF: 12345
-					</p> -->
+					
 				</div>
-				<div class="col-12" style="height: 600px; background-image: url(images/img_4.jpg) ;background-size: 100% 100%;background-repeat: no-repeat;">
-					<div class="row " style="padding-top: 300px;">
-						<div class="col-6">
-							<div class="row">
-								<div class="col-12 text-start " style="margin-top: 10px; padding-left: 1.5rem;padding-right: 1.5rem;" >
-									<a href="" class="border p-4" style="box-shadow: 0px 0px 12px 1px #000000; background-color: white;" >
-										<i class="fa fa-arrow-left  p-1"></i>
-									</a>
-								</div>
-							</div>
-			
+				<div class="col-lg-12 col-sm-12">
+					<section class="splide" aria-label="Splide Basic HTML Example">
+						<div class="splide__track">
+						  <ul class="splide__list" id="carrucel-img">
+						   
+						  </ul>
 						</div>
-						<div class="col-6">
-							<div class="row">
-								<div class="col-12 text-end  " style="margin-top: 10px; padding-left: 1.5rem;padding-right: 1.5rem;">
-									<a href="" class="border p-4" style="box-shadow: 0px 0px 12px 1px #000000; background-color: white;" >
-										<i class="fa fa-arrow-right  p-1"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					  </section>
+
 				</div>
 			</div>
 		</div>
@@ -117,66 +98,23 @@
 
 <!--DESCRIPCION DE LA PROPIEDAD-->
 
-	<section class="mx-0 mx-md-5" data-aos="fade-up"><!-- style="margin: 0px 100px 0px 100px;" -->
+	<section class="mx-0 mx-md-5" data-aos="fade-up">
 		<div class="container">
 			<div class="row">
 				<div class="col-12  col-xl-8 pb-5  mb-5">
 					<h4 class=" p-1 " id="tipo-oper-prop"></h4>
 					 <h3 class=" p-1 " id="uf-prop">
-						<!-- <b style="font-size: 50px;" >UF 3.366</b> -->
 					</h3>
 					<p class=" p-1 " style="font-size: 29px" id="clp-prop"></p>
 					<div class="row p-1 mt-5" >
 						<div class="col-6" id="caract-prop">
-							<!-- <div class="row text-center">
-								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
-										<i class="fa fa-bed" style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
-										2
-									</div>
-								</div>
-								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
-										<i class="fa fa-toilet  " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
-										2
-									</div>
-								</div>
-								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
-										<i class="fa fa-m  " style="font-size: 40px;padding-left: 6px;"></i><i class="fa fa-2  " style="font-size: 40px;padding-right: 6px;"></i>
-										77
-									</div>
-
-								</div>
-								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
-										<i class="fa fa-car  " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
-										1
-									</div>
-								</div>
-							</div> -->
+							
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 pt-5"><h2>Descripcion</h2></div>
 						<div class="col-12" id="descrip-prop" >
-							<!-- <p>	Edificios Nogales del Golf, contempla 4 edificios de 3 pisos, con vista a 
-								la cancha de golf del Club de Golf La Dehesa.
-								Emplazados en un parque de 8.000 m2 de áreas verdes, 
-								cuentan con un club house con piscina, salón gourmet y gimnasio.
-							</p> -->
 						</div>
-						<!-- <div class="col-12 pt-5"><h2>Características generales</h2></div>
-						<div class="col-12" >
-							<p>
-								Ascensor con acceso directo a pallier exclusivo. Terrazas con barandas de cristal 
-								Puertas enchapadas en madera Piso de ingeniería Ventanas termopanel PVC folio madera. 
-								Calefacción por piso radiante Muebles de cocina italianos. Cocina con mesón isla y con 
-								espacio para comedor de diario, equipada con encimera vitrocerámica, campana, lavavajillas, 
-								horno y microondas empotrado Miele Cubiertas de cuarzo Silestone en cocina Grifería Hansgrohe 
-								Tina hidromasaje.
-							</p>
-						</div> -->
 					</div>
 
 				</div>
@@ -187,26 +125,21 @@
 								<img src="images/person_4-min.jpg" alt="Image" class="img-fluid" style="width: 60%; max-width: 200px; border-radius: 50%; border: #000 1px solid;">
 							</div>
 						</div>
-						<div class="col-12">
-							<p><b style="font-size: 35px;">Nancy Deverenux</b></p>
+						<div class="col-12" id="name-realtor">
 						</div>
 						<div class="col-12">
 							<i class="fa fa-envelope-open "aria-hidden="true"></i>
 						</div>
-						<div class="col-12">
-							<p style="font-size: 18px;">nancydeverenux@gmail.com</p>
+						<div class="col-12" id="email-realtor">
 						</div>
 						<div class="col-12">
 							<i class="fa fa-whatsapp" aria-hidden="true"></i>
 						</div>
-						<div class="col-12">
-							<p style="font-size: 18px;">+56 9 5468 8585 </p>
+						<div class="col-12" id="phone-realtor">
 						</div>
 
 						<div class="col-12 text-center " style="padding: 20px; font-size: 80%;">
-							<button class="btn btn-send">
-								Contactar por whatsapp
-							</button>
+							<a href="https://api.whatsapp.com/send?phone=993286079"  style="text-decoration: none;"><button class="btn btn-send">Contactar por whatsapp</button></a>
 						</div>
 
 						<div class="col-12 text-center">
@@ -252,8 +185,6 @@
 		<div class="container">
 			<div class="row mb-3">
 				<div class="col-12" id="dire-map-prop">
-					<!-- <h2>Ubicacion de la Propiedad</h2>
-					<p style="padding-left: 14px;">Puerto montt, Lorem insup dolor</p> -->
 				</div>
 				<div class="col-12">
 					<div id="map" style="margin-bottom: 302px;"></div>
@@ -318,7 +249,7 @@
 								</p>
 							</div>
 						</div>
-					</div> <!-- /.widget -->
+					</div> 
 				</div>
 			</div> 
 
@@ -332,7 +263,7 @@
 				</div>
           </div>
         </div>
-      </div> <!-- /.container -->
+      </div> 
     </div> 
 
 
@@ -345,6 +276,7 @@
     	</div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
