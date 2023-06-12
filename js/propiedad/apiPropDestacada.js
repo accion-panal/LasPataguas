@@ -20,7 +20,7 @@ export default async function apiDestCall() {
     document.getElementById('container-prop-destacada').innerHTML = filtrado.map(data => `
     <li class="splide__slide" style="margin-left:5px">
                             <div class="property-item">
-								<a href="/property-single.html?${data.id}&statusId=${1}&companyId=${1}" class="img">
+								<a href="/property-single.html?${data.id}&realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="img">
 									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
 								</a>
 								<div class="property-content-splide text-start" style="padding: 10px 10px 10px 10px;">

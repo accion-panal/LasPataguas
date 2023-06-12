@@ -6,7 +6,7 @@ import { RealtorSendEmailData } from "../Data/userId.js";
 formEmail.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    let realtorMail = RealtorSendEmailData.sendEmail;
+let realtorMail = RealtorSendEmailData.sendEmail;
 
 
 
@@ -24,7 +24,6 @@ fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
       'Accept': 'application/json'
   },
   body: JSON.stringify({
-    companyId:0,
     Nombre: firstName.value,
     Correo: email.value,
     Telefono: phone.value,
