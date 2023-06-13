@@ -77,31 +77,6 @@ document.getElementById("max_price").addEventListener( "change", (element) => {
 })
  
 
-if(document.getElementById('buscar')){
-document.getElementById('buscar')?.addEventListener('click', async() => {
-    let nameRegion;
-    if(region !== undefined && region !== ''){nameRegion = region.replace(/\d+/, '').trim();}
-
-    //* Validar Variables no sean undefined
-    operation = (operation !== undefined && operation !== '') ? '&operationType=' + operation : '';
-    typeOfProperty = (typeOfProperty !== undefined && typeOfProperty !== '') ? '&typeOfProperty=' + typeOfProperty : '';
-    nameRegion = (nameRegion !== undefined && nameRegion !== '') ? '&region=' + nameRegion : '';
-    commune = (commune !== undefined && commune !== '') ? '&commune=' + commune : '';
-    bedrooms = (bedrooms !== undefined && bedrooms !== '') ? '&bedrooms=' + bedrooms : '';
-    bathrooms = (bathrooms !== undefined && bathrooms !== '') ? '&bathrooms=' + bathrooms : '';
-    covered_parking_lots = (covered_parking_lots !== undefined && covered_parking_lots !== '') ? '&covered_parking_lots=' + covered_parking_lots : '';
-    minPrice = (minPrice !== undefined && minPrice !== '') ? '&min_price=' + minPrice : '';
-    maxPrice = (maxPrice !== undefined && maxPrice !== '') ? '&max_price=' + maxPrice : '';
-
-    //! TypePrice
-    typePrice = (typePrice !== undefined && typePrice !== '') ? '&typePrice=' + typePrice : '';
-    window.open(
-        		window.location.origin +    
-        			`/properties.html?page=${1}&limit=${limitDataApi.limit}&realtorId=${realtorId}&statusId=${1}&operationType=${operation}&typeOfProperty=${typeOfProperty}&region=${nameRegion}&commune=${commune}&min_price=${minPrice}&max_price=${maxPrice}&covered_parking_lots=${covered_parking_lots}&bathrooms=${bathrooms}&bedrooms=${bedrooms}`
-        	);
-})
-}else{
-
 //TODO: Al hacer click en buscar, Mostrara todos los valores guardados
 document.getElementById('buscar2')?.addEventListener('click', async() => {
     console.log('=======================')
@@ -183,4 +158,3 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
     document.getElementById("buscar2").innerHTML = `Buscar`;
 
 });
-}
