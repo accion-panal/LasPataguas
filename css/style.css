@@ -10490,8 +10490,6 @@ nav[aria-label="breadcrumb"] li:before {
         color: #fff; }
 
 
-
-
 .cuadro-bl{
   border-radius: 30px;
 }
@@ -10538,8 +10536,16 @@ nav[aria-label="breadcrumb"] li:before {
 
   }
 }
+@media (max-width:377px){
+  .row-bl{
+    padding: 7px 13px 7px 8px;
+    width:330px;
+    height: 320px;
+    margin-left: 5px;
 
 
+  }
+}
 
 .form-control2 {
   display: block;
@@ -10610,6 +10616,16 @@ nav[aria-label="breadcrumb"] li:before {
     margin-left: 10px;
     margin-top: -50px;
     margin-bottom: -6px;
+
+  }
+}
+
+@media (max-width:377px){
+  .row-filtro{
+    width: 330px;
+    margin-left: 5px;
+    margin-top: -60px;
+    margin-bottom: -9px;
 
   }
 }
@@ -10745,10 +10761,33 @@ nav[aria-label="breadcrumb"] li:before {
   border-radius: 20px !important; 
   background-color: var(--color-primary) !important;
   color: var(--color-secondary) !important;
+  height: 50px !important;
+  width: 160px !important;
+  padding-left:0 !important;
+  padding-right: 0 !important;
+  padding-top: 12px;
 }
 
 
 .btn-mas:hover{
+  background-color: var(--color-secondary) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.btn-buscar{
+  border-radius: 20px !important; 
+  background-color: var(--color-primary) !important;
+  color: var(--color-secondary) !important;
+  height: 50px !important;
+  width: 80px !important;
+  padding-left:0 !important;
+  padding-right: 0 !important;
+  padding-top: 12px;
+
+}
+
+.btn-buscar:hover{
   background-color: var(--color-secondary) !important;
   color: var(--color-primary) !important;
   border: 1px solid var(--color-primary) !important;
@@ -10838,6 +10877,11 @@ nav[aria-label="breadcrumb"] li:before {
       margin-top: 90px;
     }
   }
+  @media (max-width:377px){
+    .row-filter-margin{
+      margin-top: 135px;
+    }
+  }
 
   .textLimitClass{
     display: -webkit-box !important;
@@ -10848,6 +10892,18 @@ nav[aria-label="breadcrumb"] li:before {
   }
   
   .textLimitClass:hover{
+    display: block !important;
+  }
+
+  .textLimitDireccion{
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    
+  }
+  
+  .textLimitDireccion:hover{
     display: block !important;
   }
 

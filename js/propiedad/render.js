@@ -99,7 +99,7 @@ export default async function renderCall() {
                             <p class="text-center" style="font-size: 15px; ">
                                 UF ${clpToUf(data.price, ufValueAsNumber)} - CLP ${parseToCLPCurrency(data?.price)}
                             </p>
-                            <p class="text-center" style="font-size: 15px;"> 
+                            <p class="text-center textLimitDireccion" style="font-size: 15px;"> 
                             <i class="fa fa-map-marker fa-lg"></i> ${data.address != undefined && data.address != "" && data.address != null ? data.address: "No registra dirección"}, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune: "No registra comuna"} , ${data.city != undefined && data.city != "" && data.city != null ? data.city: "No registra ciudad"}, Chile</p>	
                             <div class="row p-3 text-center">
                                 <div class="col-4 hr-l">
