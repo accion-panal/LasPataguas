@@ -10527,6 +10527,17 @@ nav[aria-label="breadcrumb"] li:before {
   }
 }
 
+@media (max-width:720px){
+  .row-bl{
+    padding: 2px 18px 14px 13px;
+    width: 480px;
+    height: 300px;
+    margin-left: 0px;
+
+
+  }
+}
+
 @media (max-width:620px){
   .row-bl{
     padding: 2px 18px 14px 13px;
@@ -10630,6 +10641,15 @@ nav[aria-label="breadcrumb"] li:before {
     margin-bottom: 1px;
   }
 }
+@media (max-width:720px){
+  .row-filtro{
+    width: 480px;
+    margin-left: 0px;
+    margin-top: -50px;
+    margin-bottom: -6px;
+
+  }
+}
 
 
 @media (max-width:620px){
@@ -10671,6 +10691,8 @@ nav[aria-label="breadcrumb"] li:before {
 
   }
 }
+
+
 
 
 .hr-l{
