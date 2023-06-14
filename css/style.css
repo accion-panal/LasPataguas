@@ -10644,7 +10644,18 @@ nav[aria-label="breadcrumb"] li:before {
   margin-bottom: -35px;
   width: 800px;
   margin-left: -100px;
+  
 
+}
+
+.type-operation-style{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.type-operation-style li{
+  margin-right: 40px;
+  align-items: center;
 }
 /* @media (max-width:1330px){
   .row-filtro{
@@ -10683,6 +10694,11 @@ nav[aria-label="breadcrumb"] li:before {
     height: 100vh;
     min-height: 860px; 
   
+  }
+  
+  .type-operation-style{
+    display: block;
+
   }
 
 }
