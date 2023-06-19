@@ -22,7 +22,7 @@ export default async function renderCall() {
         let maxPage =  Math.ceil(response.meta.totalItems / response.meta.limit);
         localStorage.setItem('LimitPages', JSON.stringify(maxPage));
         /* localStorage.setItem('countPage', JSON.stringify(1)); */
-    } 
+    }
     else {
         //* el segundo digito es el limit
         response = await getProperties(1, limitDataApi.limit, CodigoUsuarioMaestro, 1, companyId, realtorId);
@@ -39,7 +39,7 @@ export default async function renderCall() {
     //! console log para saber el contenido del response despues del if
     console.log('response in render.js',response)
 
-    //* Guardamos el data del response en una variable data 
+    //* Guardamos el data del response en una variable data
     let data = response.data;
     console.log('data in render.js',data)
 
@@ -58,7 +58,7 @@ export default async function renderCall() {
         console.log(selectedValue);
         console.log(data);
         console.log(response);
-      
+
         if (selectedValue === 'MayorMenor') {
           //* la data ordenada se guarda en response.data
           //* y se actualiza el localStorage de globalResponse
@@ -83,15 +83,20 @@ export default async function renderCall() {
 
     //todo: creacion de la funcion ShowItems
     function showItems() {
+        data = data.map(item => {
+            // Reemplazar "\\" por "//" en la propiedad "image"
+            item.image = item.image.replace(/\\/g, "//");
+            return item;
+        });
         //* si container-propiedad es distinto de Null, hara un innerHTML
         //! esto es para evitar errores
         let containerGrid = document.getElementById('container-cards');
         if (containerGrid !== null) {
             document.getElementById("container-cards").innerHTML = data.map(data =>`
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-2" >
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mb-4" >
             <div class="property-item">
                     <a href="/property-single.html?${data.id}realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="img">
-                        <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                        ${data.image.endsWith('.jpg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop">`: data.image.endsWith('.png') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop">` : data.image.endsWith('.jpeg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop">`: `<img src='https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg' alt="Image" class="img-fluid img-prop">`}
                     </a>
                     <div class="property-content text-start" style="padding: 10px 10px 10px 10px;">
                         <h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data.title}</h2>
@@ -99,8 +104,8 @@ export default async function renderCall() {
                             <p class="text-center" style="font-size: 15px; ">
                                 UF ${clpToUf(data.price, ufValueAsNumber)} - CLP ${parseToCLPCurrency(data?.price)}
                             </p>
-                            <p class="text-center textLimitDireccion" style="font-size: 15px;"> 
-                            <i class="fa fa-map-marker fa-lg"></i> ${data.address != undefined && data.address != "" && data.address != null ? data.address: "No registra dirección"}, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune: "No registra comuna"} , ${data.city != undefined && data.city != "" && data.city != null ? data.city: "No registra ciudad"}, Chile</p>	
+                            <p class="text-center textLimitDireccion" style="font-size: 15px;">
+                            <i class="fa fa-map-marker fa-lg"></i> ${data.address != undefined && data.address != "" && data.address != null ? data.address: "No registra dirección"}, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune: "No registra comuna"} , ${data.city != undefined && data.city != "" && data.city != null ? data.city: "No registra ciudad"}, Chile</p>
                             <div class="row p-3 text-center">
                                 <div class="col-4 hr-l">
                                     <div class="row ">
@@ -128,16 +133,16 @@ export default async function renderCall() {
                     </div>
                 </div>
         </div>
-            `).join("");   
+            `).join("");
         };
 
         let containerCardMap = document.getElementById('card-prop-map');
         if (containerCardMap !== null) {
-        document.getElementById('card-prop-map').innerHTML = data.map(data => 
-                  `	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 mb-2" >
+        document.getElementById('card-prop-map').innerHTML = data.map(data =>
+                  `	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 mb-3" >
                                     <div class="property-item">
             								<a href="/property-single.html?${data.id}realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="img">
-            									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                                                ${data.image.endsWith('.jpg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-map">`: data.image.endsWith('.png') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-map">` : data.image.endsWith('.jpeg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-map">`: `<img src='https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg' alt="Image" class="img-fluid img-prop-map">`}
             								</a>
             								<div class="property-content text-start" style="padding: 10px 10px 10px 10px;">
             									<h2 class="textLimitClass" style="font-weight: bold; padding-left:40px;font-size:24px;">${data.title}</h2>
@@ -145,8 +150,8 @@ export default async function renderCall() {
             										<p class="text-center" style="font-size: 15px; ">
             											UF ${clpToUf(data.price, ufValueAsNumber)} - CLP ${parseToCLPCurrency(data?.price)}
             										</p>
-            										<p class="text-center" style="font-size: 15px;"> 
-                                                    <i class="fa fa-map-marker fa-lg"></i> ${data.address != undefined && data.address != "" && data.address != null ? data.address: "No registra dirección"}, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune: "No registra comuna"} , ${data.city != undefined && data.city != "" && data.city != null ? data.city: "No registra ciudad"}, Chile</p>	
+            										<p class="text-center" style="font-size: 15px;">
+                                                    <i class="fa fa-map-marker fa-lg"></i> ${data.address != undefined && data.address != "" && data.address != null ? data.address: "No registra dirección"}, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune: "No registra comuna"} , ${data.city != undefined && data.city != "" && data.city != null ? data.city: "No registra ciudad"}, Chile</p>
             										<div class="row p-3 text-center">
             											<div class="col-4 hr-l">
             												<div class="row ">

@@ -9894,15 +9894,14 @@ textarea {
 
 .property-item .mb-30 {
   margin-bottom: 30px;
-  transform: translateY(1%);
-  transition: transform .8s ease; 
-
+  margin-top: 30px !important;
+  transition: transform .9s ease; 
 }
 
 .property-item:hover {
-  transform: translateY(-2%);
   display: block !important;
-
+  -webkit-box-shadow: 0px -1px 15px 3px rgba(0,0,0,0.56); 
+  box-shadow: 0px -1px 15px 3px rgba(0,0,0,0.56);
 }
 
 .property-item .img {
@@ -10705,49 +10704,6 @@ nav[aria-label="breadcrumb"] li:before {
 
 
 
-/* 
-
-@media (max-width:620px){
-  .row-filtro{
-    width: 485px;
-    margin-left: 10px;
-    margin-top: -50px;
-    margin-bottom: -6px;
-
-  }
-}
-@media (max-width:550px){
-  .row-filtro{
-    width: 445px;
-    margin-left: 5px;
-    margin-top: -60px;
-    margin-bottom: -9px;
-
-  }
-}
-
-@media (max-width:412px){
-  .row-filtro{
-    width: 390px;
-    margin-left: 5px;
-    margin-top: -60px;
-    margin-bottom: -9px;
-
-  }
-}
-
-
-@media (max-width:330px){
-  .row-filtro{
-    width: 300px;
-    margin-left: 5px;
-    margin-top: -60px;
-    margin-bottom: -9px;
-
-  }
-} */
-
-
 
 
 .hr-l{
@@ -11100,3 +11056,67 @@ nav[aria-label="breadcrumb"] li:before {
     border-color: #f5c2c7; }
 .alert-danger .alert-link {
     color: #6a1a21; }
+
+
+.property-item .img-container{
+  width:600px !important;
+  height: 600px !important;
+  position: relative;
+  z-index: 1;
+}
+
+
+.img-prop{
+  width: 100%!important;
+  height: 288px !important;
+}
+
+@media only screen and (max-width: 766px){
+  .img-prop{
+    width: 97%!important;
+    height: 285px !important;
+  
+  }
+
+}
+@media only screen and (max-width: 543px){
+  .img-prop{
+    width: 100%!important;
+    height: 285px !important;
+  
+  }
+
+}
+
+.img-prop-map{
+  width: 100%!important;
+  height: 288px !important;
+}
+
+@media only screen and (max-width: 766px){
+  .img-prop-map{
+    width: 97%!important;
+    height: 285px !important;
+  
+  }
+
+}
+@media only screen and (max-width: 543px){
+  .img-prop-map{
+    width: 100%!important;
+    height: 285px !important;
+  
+  }
+
+}
+
+
+.img-prop{
+  width: 100% !important;
+  height: 300px !important;
+}
+
+.img-prop-map{
+  width: 100% !important;
+  height: 280px !important;
+}

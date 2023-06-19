@@ -177,7 +177,6 @@
 															<div class="row p-2">
 																<div class="col-lg-12 text-center" style="font-size: 18px;">
 																	Horario de atención
-
 																</div>
 															</div>
 
@@ -187,8 +186,8 @@
 																<div class="col-lg-2">
 																	<i class="fa fa-clock-o fa-lg  p-1"></i>
 																</div>
-																<div class="col-lg-10">
-																	24 horas, 7 dias a la semana
+																<div class="col-lg-10" id="horario-ContactInfo">
+																	<!-- 24 horas, 7 dias a la semana -->
 																</div>
 															</div>
 														</div>
@@ -257,23 +256,16 @@
 				<div class="widget">
 					<h3 class="p-1 pt-2 text-black" style="font-size: 20px;font-weight: 700;text-transform: uppercase;">Contacto</h3>
 					<div class="row pt-2">
-						<div class="col-12">
-							<p class="">
-								<i class="fa fa-map-marker fa-lg  p-1"></i>
-								La Llavería 1894, Vitacura.
-							</p>
-						</div>
-						<div class="col-12">
-							<p class="">
-								<i class="fa fa-phone fa-lg  p-1"></i>
-								+569 66784682/ +569 93286079
-							</p>
-						</div>
-						<div class="col-12">
-							<p class="">
-								<i class="fa fa-envelope fa-lg  p-1"></i>
-								mf.laspataguas@gmail.com / gq.laspataguas@gmail.com
-							</p>
+						<div class="row pt-2">
+							<div class="col-12" id="address-ContactInfo">
+							
+							</div>
+							<div class="col-12" id="phone-ContactInfo">
+						
+							</div>
+							<div class="col-12" id="email-ContactInfo">
+								
+							</div>
 						</div>
 					</div>
 				</div> <!-- /.widget -->
@@ -314,5 +306,7 @@
 	<script type="module" src="js/utils/PostContactForm.js"></script>
     <script type="module" src="js/utils/SendEmail.js"></script>
     <script type="module" src="js/propiedad/mapsContact.js"></script>
+    <script type="module" src="js/Data/ContactInfo.js"></script>
+
   </body>
   </html>

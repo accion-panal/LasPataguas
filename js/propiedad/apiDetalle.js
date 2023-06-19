@@ -40,11 +40,13 @@ export default async function apiDetalleCall(id, statusId, companyId) {
             <p>
 				REF: ${data.id}
 			</p> `;
-    
+
+     
+        
     /* Imagenes en splide */
     data.images.forEach((images, index) => {img += ` 
         <li class="splide__slide ${ index == 0 ? "active" : ""}"> 
-            <img src="${images != null && images != "" && images != undefined  ? images : "img/Sin.png"}" style="height:600px;width:100%;"/>
+            <img src="${images.replace(/\\/g, "//")}" style="height:600px;width:100%;"/>
         </li>	
     `})
     document.getElementById('carrucel-img').innerHTML = `
