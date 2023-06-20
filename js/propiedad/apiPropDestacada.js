@@ -16,12 +16,18 @@ export default async function apiDestCall() {
     const response2 = await ExchangeRateServices.getExchangeRateUF();
     const ufValue = response2?.UFs[0]?.Valor;
     const ufValueAsNumber = parseFloat(ufValue.replace(",", "."));
+	
+	data = data.map(item => {
+		// Reemplazar "\\" por "//" en la propiedad "image"
+		item.image = item.image.replace(/\\/g, "//");
+		return item;
+	});
 
     document.getElementById('container-prop-destacada').innerHTML = filtrado.map(data => `
     <li class="splide__slide" style="margin-left:5px">
                             <div class="property-item">
 								<a href="/property-single.html?${data.id}&realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="img">
-									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
+									${data.image.endsWith('.jpg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">`: data.image.endsWith('.png') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">` : data.image.endsWith('.jpeg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">`: `<img src='https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg' alt="Image" class="img-fluid">`}
 								</a>
 								<div class="property-content-splide text-start" style="padding: 10px 10px 10px 10px;">
 									<h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data.title}</h2>
@@ -60,8 +66,8 @@ export default async function apiDestCall() {
                     </li>`).join('');
 
                     let splide = new Splide(".splide", {
-                        type: "loop",
                         drag :"free",
+						focus:'center',
                         autoplay: "play",
                         perPage: 3,
                         breakpoints: {

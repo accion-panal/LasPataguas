@@ -11120,3 +11120,44 @@ nav[aria-label="breadcrumb"] li:before {
   width: 100% !important;
   height: 280px !important;
 }
+
+.img-prop-dest{
+  width: 100% !important;
+  height: 280px !important;
+
+}
+
+@media only screen and (max-width:1367px){
+.img-prop-dest{
+  width: 90% !important;
+
+  }
+}
+
+@media only screen and (max-width:1202px){
+  .img-prop-dest{
+    width: 100% !important;
+  
+    }
+  }
+
+@media only screen and (max-width:989px){
+  .img-prop-dest{
+      width: 72% !important;
+    
+  }
+}
+
+@media only screen and (max-width:766px){
+  .img-prop-dest{
+      width: 97% !important;
+    
+  }
+}
+
+@media only screen and (max-width:541px){
+  .img-prop-dest{
+      width: 100% !important;
+    
+  }
+}

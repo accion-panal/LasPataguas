@@ -46,15 +46,17 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     /* Imagenes en splide */
     data.images.forEach((images, index) => {img += ` 
         <li class="splide__slide ${ index == 0 ? "active" : ""}"> 
-            <img src="${images.replace(/\\/g, "//")}" style="height:600px;width:100%;"/>
+            <img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : 'Ir a'}" style="height:600px;width:100%;"/>
         </li>	
     `})
     document.getElementById('carrucel-img').innerHTML = `
-        <li class="splide__slide">${img}</li>
-    `;
+        <li class="splide__slide">${img != undefined ? img :'No existe'}</li>
+    `; 
     let splide = new Splide(".splide", {
         type: "fade",
         rewind:true,
+        autoplay: true,
+
     });
     splide.mount();
     /* Fin Imagenes en splide */

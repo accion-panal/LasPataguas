@@ -4,9 +4,9 @@ export const limitDataApi = { limit:6 };
 
 
 export const RealtorSendEmailData = {
-    sendEmail: 'fabian.salas.astete@gmail.com',  /* SendEmail.js */
-    detail: 'fabian.salas.astete@gmail.com',     /* SendEmailDetail.js */
-    public: 'fabian.salas.astete@gmail.com',     /* SendEmailPublic.js */
+    sendEmail: 'contacto@propiedadeslaspataguas.cl',  /* SendEmail.js */
+    detail: 'contacto@propiedadeslaspataguas.cl',     /* SendEmailDetail.js */
+    public: 'contacto@propiedadeslaspataguas.cl',     /* SendEmailPublic.js */
 };
 
 
