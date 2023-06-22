@@ -131,13 +131,7 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
     /* localStorage.removeItem('globalResponse'); */
 
 
-    //* mostrar el global response EN CONSOLE.LOG();
-    /* let storedGlobalResponse = localStorage.getItem('globalResponse');
-    let globalResponse;
-    if (storedGlobalResponse) {
-        globalResponse = JSON.parse(storedGlobalResponse);
-    }
-    console.log('stored: ',globalResponse); */
+
 
     localStorage.setItem('countPage', JSON.stringify(1));
     renderCall();
