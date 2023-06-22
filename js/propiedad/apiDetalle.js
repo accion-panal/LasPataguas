@@ -10,7 +10,6 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
     let img;
 
-    console.log(data)
     /* INFORMACION REALTOR */
     document.getElementById('name-realtor').innerHTML = `
     <p><b style="font-size: 35px;">${data.realtor.name} ${data.realtor.lastName}</b></p>`;

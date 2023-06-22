@@ -4,7 +4,7 @@ import { getCommune } from "../services/PropertiesServices.js";
 
 const filterSelects = async () => {
     let { data } = await getRegiones();
-    console.log(data);
+    
 
     //* LLENAR FILTROS DE REGION
     /* REGION: rescatar value por su id */
