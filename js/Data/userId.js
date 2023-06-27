@@ -17,6 +17,9 @@ export const AboutInformation = {
 }
 
 export const ContactInformation = {
+    footerAddress:'La Llavería 1894, Vitacura.',
+    footerPhone:'+569 66784682/ +569 93286079',
+    footerEmail:'mf.laspataguas@gmail.com / gq.laspataguas@gmail.com',
     address: 'La Llavería 1894, Vitacura.',
     phone:'+569 66784682/ +569 93286079',
     email:'mf.laspataguas@gmail.com / gq.laspataguas@gmail.com',
