@@ -30,7 +30,7 @@ export default async function apiDestCall() {
 									${data.image.endsWith('.jpg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">`: data.image.endsWith('.png') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">` : data.image.endsWith('.jpeg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">`: `<img src='https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg' alt="Image" class="img-fluid">`}
 								</a>
 								<div class="property-content-splide text-start" style="padding: 10px 10px 10px 10px;">
-									<h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data.title}</h2>
+									<a href="/property-single.html?${data.id}realtorId=${realtorId}&statusId=${1}&companyId=${companyId}"><h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data.title}</h2></a>
 									<div>
 										<p class="text-center" style="font-size: 15px; ">
 											UF ${clpToUf(data.price, ufValueAsNumber)} - CLP ${parseToCLPCurrency(data?.price)}
