@@ -9220,6 +9220,7 @@ textarea.form-control-lg {
     padding: 0;
     font-size: 24px; }
   .site-nav .site-navigation .site-menu {
+    margin-top: 10px;
     margin-bottom: 0; }
     .site-nav .site-navigation .site-menu > li {
       display: inline-block; }
@@ -9663,7 +9664,7 @@ textarea {
   transform: translate(-50%, -50%); }
 
 .menu-bg-wrap {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px 30px;
   position: relative;
   float: left;
@@ -10508,6 +10509,12 @@ nav[aria-label="breadcrumb"] li:before {
   box-shadow: 0px 0px 11px 5px rgba(0,0,0,0.59);
 }
 
+@media only screen and (max-width:1199px){
+  .row-bl{
+    margin-left: -60px;
+    }
+}
+
 @media only screen and (max-width:990px){
   .row-bl{
     margin-left: -20px;
@@ -10517,7 +10524,7 @@ nav[aria-label="breadcrumb"] li:before {
 
 @media only screen and (max-width:786px){
   .row-bl{
-    margin-left: -20px;
+    margin-left: -9px;
     padding: 20px 24px 20px 24px;
   }
 
@@ -10656,18 +10663,23 @@ nav[aria-label="breadcrumb"] li:before {
   margin-right: 40px;
   align-items: center;
 }
-/* @media (max-width:1330px){
+
+@media only screen and (max-width:1199px){
   .row-filtro{
-    width: 650px;
+    padding:15px 25px 25px 15px;
+    width: 700px;
+    margin-left: -60px;
+    margin-top: 30px;
+    margin-bottom: -9px;
   }
-} */
+}
 
 @media only screen and (max-width:990px){
   .row-filtro{
     padding:15px 25px 25px 15px;
     width: 566px;
     margin-left: -20px;
-    margin-top: -45px;
+    margin-top: -28px;
     margin-bottom: -9px;
   }
 }
@@ -10675,8 +10687,8 @@ nav[aria-label="breadcrumb"] li:before {
 @media only screen and (max-width:786px){
   .row-filtro{
     width: 526px;
-    margin-left: -20px;
-    margin-top: -50px;
+    margin-left: -10px;
+    margin-top: -20px;
     margin-bottom: -6px;
   }
 
@@ -11159,5 +11171,30 @@ nav[aria-label="breadcrumb"] li:before {
   .img-prop-dest{
       width: 100% !important;
     
+  }
+}
+
+.message-no-resgiter{
+  font-size: 25px !important;
+  text-align: center;
+  transition: ease-in-out 200ms;
+}
+
+.message-no-resgiter:hover{
+  font-size: 28px !important;
+  transition: ease-in 400ms;
+
+}
+
+@media only screen and (max-width:487px)
+{
+  .message-no-resgiter{
+    font-size: 19px !important;
+  
+  }
+
+  .message-no-resgiter:hover{
+    font-size: 22px !important;
+  
   }
 }

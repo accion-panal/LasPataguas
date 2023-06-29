@@ -12,7 +12,7 @@ export default async function apiDestCall() {
 
     let {data} = await getProperties(1, 10,CodigoUsuarioMaestro, 1, companyId, realtorId);
     let filtrado = data.filter(data => data.highlighted != null && data.highlighted  != false );
-
+	console.log(data)
     const response2 = await ExchangeRateServices.getExchangeRateUF();
     const ufValue = response2?.UFs[0]?.Valor;
     const ufValueAsNumber = parseFloat(ufValue.replace(",", "."));
@@ -23,6 +23,7 @@ export default async function apiDestCall() {
 		return item;
 	});
 
+	if(filtrado.length != 0){
     document.getElementById('container-prop-destacada').innerHTML = filtrado.map(data => `
     <li class="splide__slide" style="margin-left:5px">
                             <div class="property-item">
@@ -81,6 +82,12 @@ export default async function apiDestCall() {
                     });
                     splide.mount();
 
+	}else{
+		document.getElementById('container-prop-destacada').innerHTML = `
+    	<li class="splide__slide" style="width:100% !important;">
+			<p class="message-no-resgiter">No registra propiedades destacadas</p>
+		</li>`;
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function () {
