@@ -8,6 +8,8 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     const response = await ExchangeRateServices.getExchangeRateUF();
     const ufValue = response?.UFs[0]?.Valor
     const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
+    const ufValueAsNumber2 = parseInt(ufValue.replace('.', '').replace(',', '.'));
+
     let img;
 
     /* INFORMACION REALTOR */
@@ -60,12 +62,24 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     splide.mount();
     /* Fin Imagenes en splide */
 
+    // ${data.currency.isoCode != 'CLP' ? `UF ${data.price} - CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}` : `UF ${clpToUf(data.price, ufValueAsNumber)} - CLP ${parseToCLPCurrency(data?.price)}`}
 
-    document.getElementById('uf-prop').innerHTML =
-    `<b style="font-size: 50px;" >UF ${clpToUf(data.price, ufValueAsNumber)}</b>`;
+    if(data.currency.isoCode != 'CLP'){
+        document.getElementById('uf-prop').innerHTML =
+        `<b style="font-size: 50px;" >UF ${data.price}</b>`;
 
-    document.getElementById('clp-prop').innerHTML =
-    `<b style="font-size: 50px;" >CLP ${parseToCLPCurrency(data?.price)}</b>`;
+        document.getElementById('clp-prop').innerHTML =
+        `<b style="font-size: 50px;" >CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</b>`;
+    }else {
+        document.getElementById('uf-prop').innerHTML =
+        `<b style="font-size: 50px;" >UF ${clpToUf(data.price, ufValueAsNumber)}</b>`;
+
+        document.getElementById('clp-prop').innerHTML =
+        `<b style="font-size: 50px;" >CLP ${parseToCLPCurrency(data?.price)}</b>`;
+    }
+
+
+
 
 
     /* Descripcion/Caracteristicas */
