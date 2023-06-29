@@ -12,7 +12,6 @@ export default async function apiDestCall() {
 
     let {data} = await getProperties(1, 10,CodigoUsuarioMaestro, 1, companyId, realtorId);
     let filtrado = data.filter(data => data.highlighted != null && data.highlighted  != false );
-	console.log(data)
     const response2 = await ExchangeRateServices.getExchangeRateUF();
     const ufValue = response2?.UFs[0]?.Valor;
     const ufValueAsNumber = parseFloat(ufValue.replace(",", "."));

@@ -46,7 +46,7 @@ export const servicesInformation = {
     },{
         id:3,
         icon:'images/icono-06.svg',
-        title:'ASESORIA LEGAL',
+        title:'ASESORÍA LEGAL',
         descrip:'Asesoría legal con el objetivo de que el cliente realice una buena inversión.',
         btnCard:false
     }
