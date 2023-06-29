@@ -111,7 +111,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 								<div class="col-6 p-2" style="min-width: 126px">
 									<div style="font-size: 30px;">
 										<i class="fa fa-car  " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
-										${data.covered_parking_lots != null && data.covered_parking_lots != undefined && data.covered_parking_lots != "" ? data.covered_parking_lots : "0"}
+										${data.coveredParkingLots != null && data.coveredParkingLots != undefined && data.coveredParkingLots != "" ? data.coveredParkingLots : "0"}
 									</div>
 								</div>
 							</div>`;
