@@ -6,8 +6,8 @@ const loadInformation = () => {
     let mision = document.getElementById('mision-info');
     if (mision !== null) {
         mision.innerHTML = `
-        <h4 style="font-weight: bold;font-size: 20px; color: #B3B3B3;" >MISIÓN</h4>
-        <p class="text-black" >
+        <h4 style="font-weight: bold;font-size: 20px; color:#e2e2e2;" >MISIÓN</h4>
+        <p style="color: #B3B3B3;" >
             ${AboutInformation.mision}
         </p>
             `;
@@ -18,8 +18,8 @@ const loadInformation = () => {
     let vision = document.getElementById('vision-info');
     if (vision !== null) {
         vision.innerHTML = `
-        <h4 style="font-weight: bold;font-size: 20px; color: #B3B3B3;" >VISIÓN</h4>
-        <p class="text-black" >
+        <h4 style="font-weight: bold;font-size: 20px;color:#e2e2e2;" >VISIÓN</h4>
+        <p style="color: #B3B3B3;" >
         ${AboutInformation.vision}
 
         </p>
@@ -28,7 +28,7 @@ const loadInformation = () => {
 
     let nosotros = document.getElementById('nosotros-info');
     if (nosotros !== null) {
-        nosotros.innerHTML = `<p>
+        nosotros.innerHTML = `<p style="color:#e2e2e2;">
         ${AboutInformation.nosotros}
         </p>
             `;

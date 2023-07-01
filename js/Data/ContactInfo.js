@@ -6,7 +6,7 @@ const loadInformation = () => {
     let footerAddress = document.getElementById('footer-address-ContactInfo');
     if (footerAddress !== null) {
         footerAddress.innerHTML = `
-        <p class="">
+        <p style="color:#B3B3B3;">
             <i class="fa fa-map-marker fa-lg  p-1"></i>
             ${ContactInformation.footerAddress}
         </p>`;
@@ -14,8 +14,8 @@ const loadInformation = () => {
     let footerPhone = document.getElementById('footer-phone-ContactInfo');
     if (footerPhone !== null) {
         footerPhone.innerHTML = `
-        <p class="">
-            <i class="fa fa-phone fa-lg  p-1"></i>
+        <p style="color:#B3B3B3;">
+            <i class="fa fa-phone fa-lg p-1"></i>
             ${ContactInformation.footerPhone}
         </p>`;
     }
@@ -23,7 +23,7 @@ const loadInformation = () => {
     let footerEmail = document.getElementById('footer-email-ContactInfo');
     if (footerEmail !== null) {
         footerEmail.innerHTML = `
-        <p class="">
+        <p style="color:#B3B3B3;">
             <i class="fa fa-envelope fa-lg  p-1"></i>
             ${ContactInformation.footerEmail}
         </p>`;
