@@ -76,7 +76,7 @@ export default async function renderCall() {
     showItems();
 
     //todo: innerHTML de las propiedades encontradas
-    document.getElementById("totalItems").innerHTML = `<span>${response.meta.totalItems} Propiedades encontradas</span>`;
+    document.getElementById("totalItems").innerHTML = `<span style="color:#e2e2e2;">${response.meta.totalItems} Propiedades encontradas</span>`;
 
     //todo: creacion de la funcion ShowItems
     function showItems() {

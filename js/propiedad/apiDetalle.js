@@ -14,31 +14,31 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 
     /* INFORMACION REALTOR */
     document.getElementById('name-realtor').innerHTML = `
-    <p><b style="font-size: 35px;">${data.realtor.name} ${data.realtor.lastName}</b></p>`;
+    <p><b style="font-size: 35px;color:#1a1a1a">${data.realtor.name} ${data.realtor.lastName}</b></p>`;
     document.getElementById('email-realtor').innerHTML = `
-    <p style="font-size: 18px;">${data.realtor.mail}</p>`;
+    <p style="font-size: 18px;color:#1a1a1a">${data.realtor.mail}</p>`;
     document.getElementById('phone-realtor').innerHTML = `
-    <p style="font-size: 18px;"> ${data.realtor.contactPhone != null && data.realtor.contactPhone!= '' ? data.realtor.contactPhone : 'No tiene número de contacto'}</p>`;
+    <p style="font-size: 18px;color:#1a1a1a"> ${data.realtor.contactPhone != null && data.realtor.contactPhone!= '' ? data.realtor.contactPhone : 'No tiene número de contacto'}</p>`;
 
 
     /* Informacion principal */
     document.getElementById('title-prop').innerHTML = `
-    <h1 style="font-weight: bold;color: #4d4d4d;">
+    <h1 style="font-weight: bold;color: #4b4b4b;">
 		${data.title}
     </h1>`;
     document.getElementById('tipo-oper-prop').innerHTML = `
-    <span>${data.types} / ${data.operation}</span>
+    <span style="color:#B3B3B3;">${data.types} / ${data.operation}</span>
     `;
     /* Direccion en Info */
     document.getElementById('dire-prop').innerHTML = `
-        <p>
+        <p style="color:#cfcfcf;font-size:22px;">
             <i class="fa fa-map-marker fa-lg  p-1"></i>
             ${data.address != null && data.address != undefined && data.address != "" ? data.address : "No registra Direccion"}, ${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile
         </p>
     `;
 
     document.getElementById('cod-prop').innerHTML = `
-            <p>
+            <p style="color:#cfcfcf;font-size:22px;">
 				REF: ${data.id}
 			</p> `;
 
@@ -66,16 +66,16 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 
     if(data.currency.isoCode != 'CLP'){
         document.getElementById('uf-prop').innerHTML =
-        `<b style="font-size: 50px;" >UF ${data.price}</b>`;
+        `<b style="font-size: 50px;color:#4b4b4b;" >UF ${data.price}</b>`;
 
         document.getElementById('clp-prop').innerHTML =
-        `<b style="font-size: 50px;" >CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</b>`;
+        `<b style="font-size: 50px;color:#cfc4b4b4bfcf" >CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</b>`;
     }else {
         document.getElementById('uf-prop').innerHTML =
-        `<b style="font-size: 50px;" >UF ${clpToUf(data.price, ufValueAsNumber)}</b>`;
+        `<b style="font-size: 50px;color:#4b4b4b" >UF ${clpToUf(data.price, ufValueAsNumber)}</b>`;
 
         document.getElementById('clp-prop').innerHTML =
-        `<b style="font-size: 50px;" >CLP ${parseToCLPCurrency(data?.price)}</b>`;
+        `<b style="font-size: 50px;color:#4b4b4b" >CLP ${parseToCLPCurrency(data?.price)}</b>`;
     }
 
 
@@ -84,32 +84,35 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 
     /* Descripcion/Caracteristicas */
     document.getElementById('descrip-prop').innerHTML = `
-    <p>	${data?.description || 'No cuenta con descripción'}</p>    
+    <div class="col-12 pt-5"><h2 style="color:#4b4b4b;">Descripcion</h2></div>
+    <div class="col-12">
+    <p style="color:#B3B3B3;">	${data?.description || 'No cuenta con descripción'}</p>    
+    </div>
     `;
 
     document.getElementById('caract-prop').innerHTML = `
                             <div class="row text-center">
 								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
+									<div style="font-size: 30px;color:#cfcfcf">
 										<i class="fa fa-bed" style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
 										${data.bedrooms != null && data.bedrooms != undefined && data.bedrooms != "" ? data.bedrooms : "0"}
 									</div>
 								</div>
 								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
+									<div style="font-size: 30px;color:#cfcfcf">
 										<i class="fa fa-toilet  " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
 										${data.bathrooms != null && data.bathrooms != undefined && data.bathrooms != "" ? data.bathrooms : "0"}
 									</div>
 								</div>
 								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
+									<div style="font-size: 30px;color:#cfcfcf">
 										<i class="fa fa-m  " style="font-size: 40px;padding-left: 6px;"></i><i class="fa fa-2  " style="font-size: 40px;padding-right: 6px;"></i>
 										${data.surface_m2 != null && data.surface_m2 != undefined && data.surface_m2 != "" ? data.surface_m2 : "0"}
 									</div>
 
 								</div>
 								<div class="col-6 p-2" style="min-width: 126px">
-									<div style="font-size: 30px;">
+									<div style="font-size: 30px;color:#cfcfcf">
 										<i class="fa fa-car  " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
 										${data.coveredParkingLots != null && data.coveredParkingLots != undefined && data.coveredParkingLots != "" ? data.coveredParkingLots : "0"}
 									</div>
@@ -119,8 +122,8 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     /* MAPA */
     /* Direccion en Mapa */
     document.getElementById('dire-map-prop').innerHTML = `
-    <h2>Ubicacion de la Propiedad</h2>
-    <p style="padding-left: 14px;">${data.address != null && data.address != undefined && data.address != "" ? data.address : "No registra Direccion"}, ${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</p>`;
+    <h2 style="color: #4b4b4b;">Ubicacion de la Propiedad</h2>
+    <p style="padding-left: 14px;color:#B3B3B3;">${data.address != null && data.address != undefined && data.address != "" ? data.address : "No registra Direccion"}, ${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</p>`;
 
     /* CONTACTO */
 

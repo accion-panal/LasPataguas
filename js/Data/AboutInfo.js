@@ -7,7 +7,7 @@ const loadInformation = () => {
     if (mision !== null) {
         mision.innerHTML = `
         <h4 style="font-weight: bold;font-size: 20px; color:#e2e2e2;" >MISIÓN</h4>
-        <p style="color: #B3B3B3;" >
+        <p style="color: #e2e2e2;" >
             ${AboutInformation.mision}
         </p>
             `;
@@ -19,7 +19,7 @@ const loadInformation = () => {
     if (vision !== null) {
         vision.innerHTML = `
         <h4 style="font-weight: bold;font-size: 20px;color:#e2e2e2;" >VISIÓN</h4>
-        <p style="color: #B3B3B3;" >
+        <p style="color: #e2e2e2;" >
         ${AboutInformation.vision}
 
         </p>
