@@ -14,7 +14,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 
     /* INFORMACION REALTOR */
     document.getElementById('name-realtor').innerHTML = `
-    <p><b style="font-size: 35px;color:#1a1a1a">${data.realtor.name} ${data.realtor.lastName}</b></p>`;
+    <p><b style="font-size: 35px;color:#1a1a1a">${data.realtor.name} ${data.realtor.lastName != null && data.realtor.lastName != undefined ? data.realtor.lastName : ""}</b></p>`;
     document.getElementById('email-realtor').innerHTML = `
     <p style="font-size: 18px;color:#1a1a1a">${data.realtor.mail}</p>`;
     document.getElementById('phone-realtor').innerHTML = `
@@ -69,7 +69,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
         `<b style="font-size: 50px;color:#4b4b4b;" >UF ${data.price}</b>`;
 
         document.getElementById('clp-prop').innerHTML =
-        `<b style="font-size: 50px;color:#cfc4b4b4bfcf" >CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</b>`;
+        `<b style="font-size: 50px;color:#4b4b4b" >CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</b>`;
     }else {
         document.getElementById('uf-prop').innerHTML =
         `<b style="font-size: 50px;color:#4b4b4b" >UF ${clpToUf(data.price, ufValueAsNumber)}</b>`;
@@ -84,7 +84,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 
     /* Descripcion/Caracteristicas */
     document.getElementById('descrip-prop').innerHTML = `
-    <div class="col-12 pt-5"><h2 style="color:#4b4b4b;">Descripcion</h2></div>
+    <div class="col-12 pt-5"><h2 style="color:#4b4b4b;">Descripción</h2></div>
     <div class="col-12">
     <p style="color:#B3B3B3;">	${data?.description || 'No cuenta con descripción'}</p>    
     </div>
@@ -113,8 +113,8 @@ export default async function apiDetalleCall(id, statusId, companyId) {
 								</div>
 								<div class="col-6 p-2" style="min-width: 126px">
 									<div style="font-size: 30px;color:#cfcfcf">
-										<i class="fa fa-car  " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
-										${data.coveredParkingLots != null && data.coveredParkingLots != undefined && data.coveredParkingLots != "" ? data.coveredParkingLots : "0"}
+										<i class="fa fa-car " style="font-size: 40px;padding-left: 6px;padding-right: 6px;"></i>
+										${data.covered_parking_lots != null && data.covered_parking_lots != undefined && data.covered_parking_lots != "" ? data.covered_parking_lots : "0"}
 									</div>
 								</div>
 							</div>`;
