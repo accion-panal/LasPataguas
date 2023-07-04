@@ -16,9 +16,9 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     document.getElementById('name-realtor').innerHTML = `
     <p><b style="font-size: 35px;color:#1a1a1a">${data.realtor.name} ${data.realtor.lastName != null && data.realtor.lastName != undefined ? data.realtor.lastName : ""}</b></p>`;
     document.getElementById('email-realtor').innerHTML = `
-    <p style="font-size: 18px;color:#1a1a1a">${data.realtor.mail}</p>`;
+    <p style="font-size: 18px;font-weight:500;color:#1a1a1a">${data.realtor.mail}</p>`;
     document.getElementById('phone-realtor').innerHTML = `
-    <p style="font-size: 18px;color:#1a1a1a"> ${data.realtor.contactPhone != null && data.realtor.contactPhone!= '' ? data.realtor.contactPhone : 'No tiene número de contacto'}</p>`;
+    <p style="font-size: 18px;font-weight:500;color:#1a1a1a;"> ${data.realtor.contactPhone != null && data.realtor.contactPhone!= '' ? data.realtor.contactPhone : 'No tiene número de contacto'}</p>`;
 
 
     /* Informacion principal */
