@@ -48,7 +48,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="index.html" class="logo m-0 float-start  px-4" ><img src="images/logo/las_Pataguas_blanco.png" style="width: 180px;"></a>
+					<a href="index.html" class="logo m-0 float-start" ><img src="images/logo/las_Pataguas_blanco.png" style="width: 180px;"></a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li><a href="about.html">NOSOTRAS</a></li>
@@ -92,96 +92,72 @@
 	
 <!----------------------------------Contactanos---------------------------------------------->
 	<div class="hero contact-img" id="id_contacto" style="background-image:url(images/contact/contacto.JPG );padding-top: 60px;">
-		<div class="container">
-			<div class="row justify-content-center align-items-center" style="height: 87vh;">
+		<div class="container container-form">
+			<div class="row justify-content-center align-items-center" style="height: 85vh;">
 				<div class="col-lg-12 text-start position-form-contact">					
 					<div class="row mt-5 contact-fondo" >
 						<div class="col-12">
-							<div class="row ">
+							<div class="row  ">
 								<div class="col-12 p-5 ">
-									<h1 style="font-weight: bold ;color: white;padding-left: 70px;">Contacto</h1>
+									<h1 style="font-weight: bold ;color: white;text-align: center;">Contacto</h1>
 								</div>
 							</div>
 							<div class="row " style="padding: 0rem 2rem 0rem 2rem;">
-								<div class="col-lg-5" style="padding: 0rem 1rem 0rem 1rem;">
-									<form action="#" class="narrow-w form-search  mb-3 formcontact" data-aos="fade-up" data-aos-delay="200" id="form-contact" name="FormSubmit">
+								<div class="col-lg-6" style="padding: 0rem 1rem 0rem 1rem;">
+									<form action="#" class="narrow-w form-search  mb-3 formcontact" data-aos="fade-up" data-aos-delay="200" name="FormSubmit" id="form-contact" method="post">
 										<div class="row   ">
 											<div class="col-lg-12 p-1 ">
-												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Nombre" name="name" id="nombre" value="Nombre"> 						
+												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;"  placeholder="Nombre" name="name" value="Nombre" id="nombre">						
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<input type="email" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Mail" name="email" id="email" value="Email">
+												<input type="email" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Mail" name="email" value="E-mail" id="email">
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<input type="number" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Telefono" name="phone" id="phone" value="Teléfono">						
+												<input type="number" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Telefono" name="phone" value="Teléfono" id="phone">						
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Asunto"  name="subject" value="Asunto" id="sujeto">
+												<input type="text" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Asunto" name="subject" value="Asunto" id="sujeto">
 											</div>
 											<div class="col-lg-12 p-1 ">
-												<textarea cols="30" rows="7" class="form-control  btn-border" style="padding-left: 30px; border: 2px solid white;background-color: transparent !important;color: white;" placeholder="Mensaje" name="mensaje" value="Mensaje" id="mensaje"></textarea>
+												<textarea cols="30" rows="7" class="form-control  btn-border" style="padding-left: 30px; border: 1px solid white;background-color: transparent !important;color: white;" placeholder="Mensaje" name="mensaje" value="Mensaje" id="mensaje"></textarea>
 											</div>
+		
 											<div class="col-lg-12 p-1 text-center">
-												<button type="submit" class="btn btn-primary " style="width: 100%;padding-top: 7px;padding-bottom: 7px;margin-top: 20px;">Enviar</button>
+												<button type="submit" class="btn btn-primary" style="width: 100%;padding-top: 7px;padding-bottom: 7px;margin-top: 20px;">Enviar</button>
 											</div>
 										</div>
 									</form>
 									<br>
 									<div id="respuesta"></div>
 								</div>
-								<div class="col-lg-7 " style="padding: 0rem 1rem 0rem 1rem;">
-									<div class="row" style="height: 100% ;">
-										<div class="col-12" style="height: 50%;">
-											<div id="map"></div>
-										</div>
-										<div class="col-12 p-3" style="height: 50%;">
-											<div class="row">
-												<div class="col-lg-6">
-													<div class="row pt-2 text-white" style="font-size: 15px;">
-														<div class="col-12">
-															<div class="row p-2" id="address-ContactInfo">
-																
-															</div>
-
-														</div>
-														<div class="col-12">
-															<div class="row p-2" id="phone-ContactInfo">
-																
-															</div>
-
-														</div>
-														<div class="col-12">
-															<div class="row p-2" id="email-ContactInfo">
+								<div class="col-lg-6">
+									<div class="row">
+										<div class="col-12 p-3">															
+											<div class="row pt-2 text-white" style="font-size: 15px;">
+								
+												<div class="col-12 text-center">
+													<div class="row p-2" id="phone-ContactInfo">
 															
-															</div>	
-
-														</div>
 													</div>
 												</div>
-												<div class="col-lg-6">
-												
-													<div class="row pt-2 text-white" style="font-size: 15px;">
-														<div class="col-12">
-															<div class="row p-2">
-																<div class="col-lg-12 text-center" style="font-size: 18px;">
-																	Horario de atención
-																</div>
-															</div>
-
-														</div>
-														<div class="col-12">
-															<div class="row p-2">
-																<div class="col-lg-2">
-																	<i class="fa fa-clock-o fa-lg  p-1"></i>
-																</div>
-																<div class="col-lg-10" id="horario-ContactInfo">
-																	<!-- 24 horas, 7 dias a la semana -->
-																</div>
-															</div>
-														</div>
-													</div>
+												<div class="col-12 text-center">
+													<div class="row" id="email-ContactInfo">													
+													</div>	
 												</div>
 											</div>
+											<div class="row">
+												<div class="col-12">
+													<div class="row p-2">
+														<div class="col-lg-12 text-center" style="font-size: 20px;font-weight: 500;color: #f2f2f2;">
+																		Horario de atención
+														</div>
+													</div>
+												</div>
+												<br/>
+												<div class="col-12 text-center"  id="horario-ContactInfo">
+							
+												</div>
+											</div>																		
 										</div>
 									</div>
 								</div>
@@ -279,7 +255,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script type="module" src="js/utils/PostContactForm.js"></script>
     <script type="module" src="js/utils/SendEmail.js"></script>
-    <script type="module" src="js/propiedad/mapsContact.js"></script>
     <script type="module" src="js/Data/ContactInfo.js"></script>
 
   </body>

@@ -3,14 +3,7 @@ import { ContactInformation } from "../Data/userId.js";
 const loadInformation = () => {
     const dataHorario = ContactInformation.horario;
 
-    let footerAddress = document.getElementById('footer-address-ContactInfo');
-    if (footerAddress !== null) {
-        footerAddress.innerHTML = `
-        <p style="color:#B3B3B3;">
-            <i class="fa fa-map-marker fa-lg  p-1"></i>
-            ${ContactInformation.footerAddress}
-        </p>`;
-    }
+
     let footerPhone = document.getElementById('footer-phone-ContactInfo');
     if (footerPhone !== null) {
         footerPhone.innerHTML = `
@@ -28,20 +21,12 @@ const loadInformation = () => {
             ${ContactInformation.footerEmail}
         </p>`;
     }
- 
-    let address = document.getElementById('address-ContactInfo');
-    if (address !== null) {
-        address.innerHTML = `
-        <p class="">
-            <i class="fa fa-map-marker fa-lg  p-1"></i>
-            ${ContactInformation.address}
-        </p>`;
-    }
+
 
     let phone = document.getElementById('phone-ContactInfo');
     if (phone !== null) {
         phone.innerHTML = `
-        <p class="">
+        <p style="font-size: 18px">
             <i class="fa fa-phone fa-lg  p-1"></i>
             ${ContactInformation.phone}
         </p>
@@ -51,7 +36,7 @@ const loadInformation = () => {
     let email = document.getElementById('email-ContactInfo');
     if (email !== null) {
         email.innerHTML = `
-        <p class="">
+        <p style="font-size: 18px">
             <i class="fa fa-envelope fa-lg  p-1"></i>
             ${ContactInformation.email}
         </p>
@@ -61,9 +46,17 @@ const loadInformation = () => {
     let horario = document.getElementById('horario-ContactInfo');
     if (horario !== null) {
         horario.innerHTML=
-    `<p>
-        ${ContactInformation.horario}
-    </p>`
+    `
+    <div class="row p-2">
+        <div class="col-lg-10">
+            <p style="font-size: 18px;color:#f2f2f2">
+            <i class="fa fa-clock-o fa-lg p-1"></i>
+
+            ${ContactInformation.horario}
+            </p>
+        </div>
+    </div>
+   `
     }
 }
 
