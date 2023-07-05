@@ -9688,7 +9688,7 @@ textarea {
 .hero {
   position: relative;
   background-size: cover;
-  background-position: cnter center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-color: #00204a; }
   .hero.overlay {
@@ -10658,6 +10658,7 @@ nav[aria-label="breadcrumb"] li:before {
   padding: 25px 50px 50px 15px;
   border-radius: 10px;
   margin-bottom: -35px;
+  margin-top: 35px;
   width: 800px;
   margin-left: -100px;
   
@@ -10698,8 +10699,8 @@ nav[aria-label="breadcrumb"] li:before {
   .row-filtro{
     width: 526px;
     margin-left: -10px;
-    margin-top: -20px;
-    margin-bottom: -6px;
+    margin-top: 9px;
+    margin-bottom: -16px;
   }
 
 }
@@ -11000,7 +11001,7 @@ nav[aria-label="breadcrumb"] li:before {
   background-color: var(--color-success);
   background-repeat: no-repeat;
   background-size: 16px 12px;
-  border: 2px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -11157,12 +11158,14 @@ nav[aria-label="breadcrumb"] li:before {
 
 @media only screen and (max-width: 766px){
   .img-prop{
-    width: 97%!important;
+    width: 96%!important;
     height: 285px !important;
   
   }
 
 }
+
+
 @media only screen and (max-width: 543px){
   .img-prop{
     width: 100%!important;

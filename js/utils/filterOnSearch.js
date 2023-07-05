@@ -13,10 +13,60 @@ let region;
 let commune;
 let bathrooms;
 let bedrooms;
-let covered_parking_lots;
+let parkingLots;
 let typePrice;
 let minPrice;
 let maxPrice;
+
+
+
+let globalQuery;
+//* Actualizar variables si vienen del index
+let storedGlobalQuery = localStorage.getItem('globalQuery');
+if (storedGlobalQuery) {
+    globalQuery = JSON.parse(storedGlobalQuery);
+    // console.log('globalQuery: ',globalQuery);
+
+    if(globalQuery.bathrooms != null){
+        document.getElementById("bathrooms").value = globalQuery.bathrooms;
+    }
+    if(globalQuery.bedrooms != null){
+        document.getElementById("bedrooms").value = globalQuery.bedrooms;
+    }
+    if(globalQuery.commune != null){
+       /*  document.getElementById("communeTextId").value = globalQuery.commune; */
+    }
+
+    if(globalQuery.covered_parking_lots != null){
+        document.getElementById("covered_parking_lots").value = globalQuery.covered_parking_lots;
+    }
+    if(globalQuery.max_price != null){
+        document.getElementById("max_price").value = globalQuery.max_price;
+    }
+    if(globalQuery.min_price != null){
+        document.getElementById("min_price").value = globalQuery.min_price;
+    }
+    if(globalQuery.operationType != null){
+        /* document.getElementById("operationType").value = globalQuery.operationType; */
+
+        if(globalQuery.operationType == 'venta'){document.getElementById('flexRadioDefault1').checked = true}
+        if(globalQuery.operationType == 'arriendo'){document.getElementById('flexRadioDefault2').checked = true}
+        if(globalQuery.operationType == 'arriendo_temporal'){document.getElementById('flexRadioDefault3').checked = true}
+    }
+    if(globalQuery.typePrice != null){
+        /* document.getElementById("operationType").value = globalQuery.operationType; */
+
+        if(globalQuery.typePrice == 'uf'){document.getElementById('inlineRadio1').checked = true}
+        if(globalQuery.typePrice == 'clp'){document.getElementById('inlineRadio2').checked = true}
+    }
+    if(globalQuery.region != null){
+        /* document.getElementById("region").value = globalQuery.region; */
+    }
+    if(globalQuery.typeOfProperty != null){
+        document.getElementById("typeOfProperty").value = globalQuery.typeOfProperty;
+    }
+} 
+
 
 //* Actualizar variables
 //! Operacion
@@ -25,7 +75,6 @@ document.getElementById('flexRadioDefault2').addEventListener('change', mostrarV
 document.getElementById('flexRadioDefault3').addEventListener('change', mostrarValor);
 function mostrarValor(event) {
     operation = event.target.value;
-    console.log(operation)
 }
 
 //!Tipo de propiedad
@@ -34,13 +83,13 @@ document.getElementById('typeOfProperty').addEventListener('change' ,(element) =
 })
 
 //! Region
-document.getElementById("region").addEventListener( "change", (element) => {
+document.getElementById("regionTextId").addEventListener( "change", (element) => {
     region = element.target.value;
-    console.log('id region: ',region);
+    // console.log('id region: ',region);
 })
 
 //! Comuna
-document.getElementById("commune").addEventListener( "change", (element) => {
+document.getElementById("communeTextId").addEventListener( "change", (element) => {
     commune = element.target.value;  
 })
 
@@ -51,7 +100,7 @@ document.getElementById("bedrooms").addEventListener( "change", (element) => {
 
 //! Estacionamientos
 document.getElementById("covered_parking_lots").addEventListener( "change", (element) => {
-    covered_parking_lots = element.target.value;  
+    parkingLots = element.target.value;  
 })
 
 //! Baños
@@ -75,12 +124,13 @@ document.getElementById("min_price").addEventListener( "change", (element) => {
 document.getElementById("max_price").addEventListener( "change", (element) => {
     maxPrice= element.target.value;
 })
- 
+  
+
 
 //TODO: Al hacer click en buscar, Mostrara todos los valores guardados
 document.getElementById('buscar2')?.addEventListener('click', async() => {
-    console.log('=======================')
-    console.log('FilterOnSearch')
+    // console.log('=======================')
+    // console.log('FilterOnSearch')
     //* mostrar spinner loading
     document.getElementById("buscar2").innerHTML = `<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>`;
 
@@ -97,7 +147,7 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
     commune = (commune !== undefined && commune !== '') ? '&commune=' + commune : '';
     bedrooms = (bedrooms !== undefined && bedrooms !== '') ? '&bedrooms=' + bedrooms : '';
     bathrooms = (bathrooms !== undefined && bathrooms !== '') ? '&bathrooms=' + bathrooms : '';
-    covered_parking_lots = (covered_parking_lots !== undefined && covered_parking_lots !== '') ? '&covered_parking_lots=' + covered_parking_lots : '';
+    parkingLots = (parkingLots !== undefined && parkingLots !== '') ? '&covered_parking_lots=' + parkingLots : '';
     minPrice = (minPrice !== undefined && minPrice !== '') ? '&min_price=' + minPrice : '';
     maxPrice = (maxPrice !== undefined && maxPrice !== '') ? '&max_price=' + maxPrice : '';
 
@@ -106,24 +156,24 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
 
 
     //* Mostrar variables en console log
-    console.log('operation ',operation); //operacion - venta,arriendo,etc
-    console.log('typeOfProperty ',typeOfProperty); //typeOfProperty
-    console.log('region ',nameRegion); //typeOfProperty
-    console.log('commune ',commune); //typeOfProperty
-    console.log('bedrooms ',bedrooms); //bedrooms
-    console.log('bathrooms ',bathrooms); //bedrooms
-    console.log('covered_parking_lots',covered_parking_lots); //Estacionamientos
-    console.log('typePrice ',typePrice); //tipo de price
-    console.log('minPrice ',minPrice); //precio minimo
-    console.log('maxPrice ',maxPrice); //precio maximo
+    // console.log('operation ',operation); //operacion - venta,arriendo,etc
+    // console.log('typeOfProperty ',typeOfProperty); //typeOfProperty
+    // console.log('region ',nameRegion); //typeOfProperty
+    // console.log('commune ',commune); //typeOfProperty
+    // console.log('bedrooms ',bedrooms); //bedrooms
+    // console.log('bathrooms ',bathrooms); //bedrooms
+    // console.log('parkingLots ',parkingLots); //Estacionamientos
+    // console.log('typePrice ',typePrice); //tipo de price
+    // console.log('minPrice ',minPrice); //precio minimo
+    // console.log('maxPrice ',maxPrice); //precio maximo
 
 
     //* Generar url
-    let urlFilters = operation+typeOfProperty+nameRegion+commune+bedrooms+bathrooms+covered_parking_lots+minPrice+maxPrice;
-    console.log(urlFilters);
+    let urlFilters = operation+typeOfProperty+nameRegion+commune+bedrooms+bathrooms+parkingLots+minPrice+maxPrice;
+    // console.log(urlFilters);
     //* Hacer peticion a la api     | el segundo digito es el limit
     let response = await getPropertiesForCustomUrl(1,limitDataApi.limit,CodigoUsuarioMaestro,1,companyId,realtorId,urlFilters);
-    console.log(response);
+    // console.log(response);
     //* Guardar el response en el globalResponse
     localStorage.setItem('globalResponse', JSON.stringify(response));
 
@@ -131,7 +181,13 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
     /* localStorage.removeItem('globalResponse'); */
 
 
-
+    //* mostrar el global response EN CONSOLE.LOG();
+    /* let storedGlobalResponse = localStorage.getItem('globalResponse');
+    let globalResponse;
+    if (storedGlobalResponse) {
+        globalResponse = JSON.parse(storedGlobalResponse);
+    }
+    console.log('stored: ',globalResponse); */
 
     localStorage.setItem('countPage', JSON.stringify(1));
     renderCall();
@@ -144,7 +200,7 @@ document.getElementById('buscar2')?.addEventListener('click', async() => {
     commune = commune.replace('&commune=', '');
     bedrooms = bedrooms.replace('&bedrooms=', '');
     bathrooms = bathrooms.replace('&bathrooms=', '');
-    covered_parking_lots = covered_parking_lots.replace('&covered_parking_lots=', '');
+    parkingLots = parkingLots.replace('&covered_parking_lots=', '');
     minPrice = minPrice.replace('&min_price=', '');
     maxPrice = maxPrice.replace('&max_price=', '');
 
