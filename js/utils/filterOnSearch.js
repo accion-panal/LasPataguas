@@ -55,15 +55,31 @@ if (storedGlobalQuery) {
     }
     if(globalQuery.typePrice != null){
         /* document.getElementById("operationType").value = globalQuery.operationType; */
-
         if(globalQuery.typePrice == 'uf'){document.getElementById('inlineRadio1').checked = true}
         if(globalQuery.typePrice == 'clp'){document.getElementById('inlineRadio2').checked = true}
     }
-    if(globalQuery.region != null){
-        /* document.getElementById("region").value = globalQuery.region; */
-    }
     if(globalQuery.typeOfProperty != null){
         document.getElementById("typeOfProperty").value = globalQuery.typeOfProperty;
+    }
+
+//* Actualizar variable segun el globalQuery
+    if(globalQuery.region != null){
+        const regionData = data.regions.find(region => region.id == globalQuery.region);
+        region = `${regionData.name}`;
+        console.log(region)
+
+    }
+    //* Actualizar variable segun el globalQuery
+    if(globalQuery.commune != null){
+        let aux = await getCommune(globalQuery.region);
+        const communeData = aux.data.find(commune => commune.id == globalQuery.commune);
+        commune = `${communeData.name}`
+        console.log(commune)
+
+    }
+    //* Actualizar variable segun el globalQuery
+    if(globalQuery.typeOfProperty != null){
+        typeOfProperty = globalQuery.typeOfProperty;
     }
 } 
 
