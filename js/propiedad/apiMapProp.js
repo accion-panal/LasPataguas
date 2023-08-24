@@ -10,7 +10,7 @@ export default async function apiCallMap() {
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-70.680628,-33.469970],
-        zoom:8,
+        zoom:9,
 
     });
 

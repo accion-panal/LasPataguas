@@ -11169,6 +11169,11 @@ nav[aria-label="breadcrumb"] li:before {
   margin-bottom: 100px;
 }
 
+.initilMap{
+  height: 0; 
+  overflow: hidden;
+}
+
 .btn-send{
   border-radius: 25px !important; 
   background-color: var(--color-info) !important;
