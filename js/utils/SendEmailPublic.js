@@ -46,6 +46,8 @@ fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
     Dirección:'',
     Area:'',
     termsAndConditions: true,
+    '_subject': 'De: servicios/propiedadeslaspataguas.cl'
+
   })
 })
   .then(response => response.json())

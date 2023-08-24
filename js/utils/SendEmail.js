@@ -29,6 +29,7 @@ fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
     Telefono: phone.value,
     Sujeto: subject.value,
     Mensaje: message.value,
+    '_subject': 'De: contacto/propiedadeslaspataguas.cl'
   })
 })
   .then(response => response.json())

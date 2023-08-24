@@ -10,7 +10,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
     const ufValueAsNumber2 = parseInt(ufValue.replace('.', '').replace(',', '.'));
 
-    let img;
+    let img ="";
 
     /* INFORMACION REALTOR */
     document.getElementById('name-realtor').innerHTML = `
@@ -24,7 +24,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
     /* Informacion principal */
     document.getElementById('title-prop').innerHTML = `
     <h1 style="font-weight: bold;color: #4b4b4b;">
-		${data.title}
+		${data.title  != undefined ? data.title :  "No Cuenta con titulo"}
     </h1>`;
     document.getElementById('tipo-oper-prop').innerHTML = `
     <span style="color:#B3B3B3;">${data.types} / ${data.operation}</span>
@@ -37,6 +37,7 @@ export default async function apiDetalleCall(id, statusId, companyId) {
         </p>
     `;
 
+    console.log(data.address,)
     document.getElementById('cod-prop').innerHTML = `
             <p style="color:#cfcfcf;font-size:22px;">
 				REF: ${data.id}
@@ -46,12 +47,12 @@ export default async function apiDetalleCall(id, statusId, companyId) {
         
     /* Imagenes en splide */
     data.images.forEach((images, index) => {img += ` 
-        <li class="splide__slide ${ index == 0 ? "active" : ""}"> 
-            <img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : 'Ir a'}" style="height:600px;width:100%;"/>
+        <li class="splide__slide ${ index === 0 ? "active" : ""}"> 
+            <img src="${images.replace(/\\/g, "//") !== undefined ? images.replace(/\\/g, "//")  : 'Ir a'}" class="img-detalle-prop"/>
         </li>	
     `})
     document.getElementById('carrucel-img').innerHTML = `
-        <li class="splide__slide">${img != undefined ? img :'No existe'}</li>
+        <li class="splide__slide">${img != undefined ? img :'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg'}</li>
     `; 
     let splide = new Splide(".splide", {
         type: "fade",

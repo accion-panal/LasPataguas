@@ -116,14 +116,14 @@
 									</select>
 								</div>
 								<div class="col-lg-6 p-1">
-									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="region">
+									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="regionTextId">
 										<option value="0" selected>Región</option>
 										
 		
 									</select>
 								</div>
 								<div class="col-lg-6 p-1">
-									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="commune">
+									<select class="form-select" style="border-radius: 19px;border: 1px solid black; " aria-label="Default select example" id="communeTextId">
 										<option value="" selected>Comuna</option>
 									</select>
 								</div>
@@ -157,7 +157,7 @@
 										<div class="row text-start " id="headingOne">
 											<div class="col-12" style="padding-left: 1.5rem;padding-right: 1.5rem;"  >		
 												<button class="btn btn-mas" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-													Busqueda avanzada
+													Búsqueda avanzada
 												</button>
 											</div>
 										</div>
@@ -212,24 +212,27 @@
 <!--                                       Botones Grilla - Carta - Mapa             -->
 <section style="background-color: #878787;padding:17px 14px 10px 14px;height: 100% !important;" data-aos="fade-up">
 	<div class="row align-items-center py-1 ">
-		<div class="col-12 float-start " style="padding-left: 10%;">
-			<h1 style="font-size: 50px;font-weight: bold;color: #4d4d4d;">PROPIEDADES</h1>
+		<div class="col-12" style="text-align: left;padding-top: 80px;">
+			<h1 style="font-size: 50px;font-weight: bold;color: #e2e2e2;;padding-left: 9%;">PROPIEDADES</h1>
 		</div>
-		<div class="col-12 float-start " style="padding-left: 10%;">
-			<h5 style="font-size: 20px;font-weight: bold;color: #4d4d4d;"><a href="index.html">Inicio</a> / <a href="properties.html">Propiedades</a></h5>
+		<div class="col-12" style="text-align: left;">
+			<h5 style="font-size: 20px;font-weight: bold;color: #e2e2e2;;padding-left: 9%;"><a style="color:#e2e2e2;" href="index.html">Inicio</a> / <a style="color:#e2e2e2;"  href="properties.html">Propiedades</a></h5>
 		</div>
-
-		<div class="col-lg-12 grilla-custom " style="margin-top: 20px ;">
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-sm-6 grilla-custom " style="margin-top: 20px ;">
 			<div class="custom-pagination ">
-				<a href="properties.html"><img src="images/grilla-icono.svg" alt=""></a>
-				<a href="properties-map.html" class="active" ><img src="images/mapa-icono.svg" alt=""></a>
+				<a href="properties.html"class="active "><img src="images/grilla-icono.svg" alt=""></a>
+				<a href="properties-map.html" ><img src="images/mapa-icono.svg" alt=""></a>
 
 			</div>
 		</div>
-		<div class="col-lg-6 text-start" style="padding-top: 10px ;" id="totalItems">
+	</div>
+	<div class="row">
+		<div class="col-lg-5 col-sm-6 text-start" style="padding-top: 10px;" id="totalItems">
 			
 		</div>
-		<div class="col-lg-6 text-start " style="padding-top: 10px ;">
+		<div class="col-lg-4 col-sm-12 text-start " style="padding-top: 10px ;">
 			<div class="row align-items-center" style="padding-top: 10px; padding-right: 10px; padding-left: 10px;">
 				<div class="col-4 text-center" style="color:#e2e2e2;">Orden por:</div>
 				<div class="col-8 text-center">
@@ -241,6 +244,20 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-lg-2 col-sm-3" style="padding-top: 10px ;">
+			<div class="row  align-items-center"  style="padding-top: 10px; padding-right: 10px; padding-left: 10px;">
+				<div class="col-4 text-center" style="color:#e2e2e2;">Ver:</div>
+				<div class="col-lg-8">
+					<select id="FilterLimit" type="text" name="" class="form-select">
+						<option value="3" >3</option>
+						<option value="6" selected>6</option>
+						<option value="9">9</option>
+					  </select>
+				</div>
+			</div>
+	
+		  </div>
+
 	</div>
 <!-----------------------------------------Propiedades----------------------------------------------------->
 

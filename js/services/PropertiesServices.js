@@ -6,10 +6,11 @@ export const getProperties = async(page, limit,CodigoUsuarioMaestro, statusId, c
 }
 
 
-export const getPropertiesForId = async( id ,  statusId, companyId) => {
-  let data = await api.get(`properties/${id}?&statusId=${statusId}&companyId=${companyId}`);
+export const getPropertiesForId = async( id, realtorId, statusId, companyId) => {
+  let data = await api.get(`properties/${id}?&realtorId=${realtorId}&statusId=${statusId}&companyId=${companyId}`);
   return data;
 }
+
 
 //* Filtros
 export const getPropertiesForCustomUrl = async (page, limit, CodigoUsuarioMaestro, statusId, companyId, realtorId,urlFilters) =>{
