@@ -26,11 +26,11 @@ export default async function apiDestCall() {
     document.getElementById('container-prop-destacada').innerHTML = filtrado.map(data => `
     <li class="splide__slide" style="margin-left:5px">
                             <div class="property-item">
-								<a href="/property-single.html?${data.id}&realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="img">
+								<a href="/property-single.html?${data.id}&realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="img" target="_blank">
 									${data.image.endsWith('.jpg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">`: data.image.endsWith('.png') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">` : data.image.endsWith('.jpeg') ? `<img src=${data.image} alt="Image" class="img-fluid img-prop-dest">`: `<img src='https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg' alt="Image" class="img-fluid">`}
 								</a>
 								<div class="property-content-splide text-start" style="padding: 10px 10px 10px 10px;">
-									<a href="/property-single.html?${data.id}realtorId=${realtorId}&statusId=${1}&companyId=${companyId}"><h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data.title}</h2></a>
+									<a href="/property-single.html?${data.id}realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" target="_blank"><h2 class="textLimitClass" style="font-weight: bold; padding-left:40px">${data?.title || "No cuenta con titulo"}</h2></a>
 									<div>
 										<p class="text-center" style="font-size: 15px; ">
 											UF ${clpToUf(data.price, ufValueAsNumber)} - CLP ${parseToCLPCurrency(data?.price)}
