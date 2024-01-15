@@ -10,7 +10,7 @@ export default async function paginationCall() {
     let response;
     let data;
 
-    let prefixUrl = 'https://aulen.partnersadvisers.info/properties?';
+    let prefixUrl = 'https://pages-api.panal.house/properties?';
 
     let storedCountPage = localStorage.getItem('countPage');
     let maxPage;

@@ -12,6 +12,20 @@ export default async function apiDetalleCall(id, realtorId,statusId, companyId) 
 
     let img ="";
 
+
+    //Agrega y respta  el salto de linea que trae la API para la descripción
+    const lineas = data?.description?.split('\n') || 'No cuenta con descripción';
+    const linasList = lineas.map(function(linea) {
+        const parrafo = document.createElement('p');
+        parrafo.textContent = linea;
+        return parrafo;
+    });
+    
+    const contenParrafo = document.getElementById('descrip');
+    contenParrafo.append(...linasList);
+    //Fin salto de linea
+
+
     /* INFORMACION REALTOR */
     document.getElementById('name-realtor').innerHTML = `
     <p><b style="font-size: 35px;color:#1a1a1a">${data.realtor.name} ${data.realtor.lastName != null && data.realtor.lastName != undefined ? data.realtor.lastName : ""}</b></p>`;
@@ -37,7 +51,6 @@ export default async function apiDetalleCall(id, realtorId,statusId, companyId) 
         </p>
     `;
 
-    console.log(data.address,)
     document.getElementById('cod-prop').innerHTML = `
             <p style="color:#cfcfcf;font-size:22px;">
 				REF: ${data.id}
@@ -84,12 +97,12 @@ export default async function apiDetalleCall(id, realtorId,statusId, companyId) 
 
 
     /* Descripcion/Caracteristicas */
-    document.getElementById('descrip-prop').innerHTML = `
-    <div class="col-12 pt-5"><h2 style="color:#4b4b4b;">Descripción</h2></div>
-    <div class="col-12">
-    <p style="color:#B3B3B3;">	${data?.description || 'No cuenta con descripción'}</p>    
-    </div>
-    `;
+    // document.getElementById('descrip-prop').innerHTML = `
+    // <div class="col-12 pt-5"><h2 style="color:#4b4b4b;">Descripción</h2></div>
+    // <div class="col-12">
+    // <p style="color:#B3B3B3;">${data?.description || 'No cuenta con descripción'}</p>
+    // </div>
+    // `;
 
     document.getElementById('caract-prop').innerHTML = `
                             <div class="row text-center">

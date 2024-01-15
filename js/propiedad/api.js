@@ -1,5 +1,5 @@
 
-import renderCall from "../propiedad/render.js";
+import renderCall from "./render.js";
 
 
 
